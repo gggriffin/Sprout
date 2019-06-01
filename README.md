@@ -14,3 +14,11 @@
 npm install -g firebase-tools
 
 --------------------------------------------------------
+
+API Key down here..
+
+AIzaSyBwpUzbvSnvv7GkBdKg6CH2QFPVbeewLJY
+
+Use this key in your application by passing it with the key=API_KEY parameter
+--------------------------------------------------------
+
