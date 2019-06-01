@@ -62,4 +62,9 @@ node_modules/
 .yarn-integrity
 
 # dotenv environment variables file
+=======
+.DS_Store
+node_modules
+npm-debug.log
+ dev
 .env
