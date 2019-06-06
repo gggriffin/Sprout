@@ -17,7 +17,7 @@
   height: 40vh;
 }
 
-/* Creates background color and size using view height*/
+/* Creates background color with temporary white border until footer is final*/
 .background {
   background-color: #5A64A9;
   padding: 20px;
