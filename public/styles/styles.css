@@ -2,6 +2,10 @@
   font-family: 'Roboto', sans-serif;
 }
 
+.copyright {
+  font-size: .75em;
+}
+
 .list-group-item {
   line-height: 2.5;
 }
@@ -17,11 +21,10 @@
   height: 40vh;
 }
 
-/* Creates background color with temporary white border until footer is final*/
+/* Creates background color */
 .background {
   background-color: #5A64A9;
   padding: 20px;
-  border-bottom: 50px solid #FFFFFF;
 }
 
 /* Creates border/background for featured content*/
@@ -35,4 +38,8 @@ color: #FFFFFF;
 .feature-title {
 color: #3AFA62;
 font-weight: bold;
+}
+
+.footer {
+  background-color: #FFFFFF;
 }
