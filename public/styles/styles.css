@@ -1,18 +1,38 @@
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
 .list-group-item {
   line-height: 2.5;
 }
 
 .header {
   background-color: #3f3f3f;
-  border-bottom: 10px solid #FFFFFF;
+  border-bottom: 50px solid #FFFFFF;
 }
 
+/* Header gif on page load. Needs to be resized for different screen sizes in media query*/
 .header-gif {
   width: 40vh;
   height: 40vh;
 }
 
+/* Creates background color and size using view height*/
 .background {
   background-color: #5A64A9;
-  height: 120vh;
+  padding: 20px;
+  border-bottom: 50px solid #FFFFFF;
+}
+
+/* Creates border/background for featured content*/
+.feature {
+border: solid 10px #FFFFFF;
+border-radius: 15px;
+background-color: #3f3f3f;
+color: #FFFFFF;
+}
+
+.feature-title {
+color: #3AFA62;
+font-weight: bold;
 }
