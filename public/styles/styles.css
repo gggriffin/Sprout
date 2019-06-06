@@ -1,3 +1,18 @@
 .list-group-item {
   line-height: 2.5;
 }
+
+.header {
+  background-color: #3f3f3f;
+  border-bottom: 10px solid #FFFFFF;
+}
+
+.header-gif {
+  width: 40vh;
+  height: 40vh;
+}
+
+.background {
+  background-color: #5A64A9;
+  height: 120vh;
+}
