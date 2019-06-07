@@ -2,9 +2,23 @@ var db = require("../models");
 
 module.exports = function(app) {
   // Get all projectExamples
-  app.get("/api/projectExample", function(req, res) {
-    db.projectExample.findAll({}).then(function(dbprojectExamples) {
+  app.get("/api/projectExamples", function(req, res) {
+    db.projectExamples.findAll({}).then(function(dbprojectExamples) {
       res.json(dbprojectExamples);
+      
+    });
+  });
+  // Get all library lists
+  app.get("/api/libraryLists", function(req, res) {
+    db.libraryLists.findAll({}).then(function(dblibraryLists) {
+      res.json(dblibraryLists);
+      
+    });
+  });
+   // Get all api Lists
+   app.get("/api/apiLists", function(req, res) {
+    db.apiLists.findAll({}).then(function(dbapiLists) {
+      res.json(dbapiLists);
       
     });
   });

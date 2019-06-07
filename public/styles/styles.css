@@ -1,3 +1,46 @@
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Creates background color */
+.background {
+  background-color: #5A64A9;
+  padding: 20px;
+}
+
+.copyright {
+  font-size: .75em;
+}
+
 .list-group-item {
   line-height: 2.5;
+}
+/* Header tile. Need to remove border-bottom when navbar is complete*/
+.header {
+  background-color: #3f3f3f;
+  border-bottom: 50px solid #FFFFFF;
+}
+
+/* Header gif on page load. Needs to be resized for different screen sizes in media query*/
+.header-gif {
+  width: 40vh;
+  height: 40vh;
+}
+
+/* Creates border/background for featured content*/
+.feature {
+border: solid 10px #FFFFFF;
+border-radius: 15px;
+background-color: #3f3f3f;
+color: #FFFFFF;
+}
+
+/*Styling for <h3> titles of feature tiles*/
+.feature-title {
+color: #3AFA62;
+font-weight: bold;
+}
+
+.footer {
+  background-color: #FFFFFF;
 }

@@ -1,5 +1,5 @@
 module.exports = function (sequelize, DataTypes) {
-  var projectExample = sequelize.define("projectExample", {
+  var projectExamples = sequelize.define("projectExamples", {
     title: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -10,11 +10,13 @@ module.exports = function (sequelize, DataTypes) {
     body: {
       type: DataTypes.TEXT,
       allowNull: false,
-      len: [1]
+      validate: {
+        len: [1]
+      }
     },
     skills: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
       validate: {
         len: [1]
       }
@@ -34,5 +36,5 @@ module.exports = function (sequelize, DataTypes) {
       }
     }
   });
-  return projectExample;
+  return projectExamples;
 };

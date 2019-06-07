@@ -1,5 +1,5 @@
 module.exports = function (sequelize, DataTypes) {
-  var tags = sequelize.define("tags", {
+  var apiLists = sequelize.define("apiLists", {
     title: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -10,10 +10,12 @@ module.exports = function (sequelize, DataTypes) {
     body: {
       type: DataTypes.TEXT,
       allowNull: false,
-      len: [1]
+      validate: {
+        len: [1]
+      }
     },
-    type: {
-      type: DataTypes.STRING,
+    score: {
+      type: DataTypes.INTEGER,
       allowNull: false,
       validate: {
         len: [1]
@@ -25,14 +27,7 @@ module.exports = function (sequelize, DataTypes) {
       validate: {
         len: [1]
       }
-    },
-    rating: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      validate: {
-        len: [1]
-      }
     }
   });
-  return tags;
+  return apiLists;
 };
