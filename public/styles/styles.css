@@ -70,13 +70,13 @@ background-color: #3f3f3f;
 color: #FFFFFF;
 }
 
-.suggestSubmitBtn {
+.suggest-submit-btn {
   background-color: #FFFFFF;
   color: #3f3f3f;
   border-radius: 15px;
 }
 
-.suggestSubmitBtn:hover {
+.suggest-submit-btn:hover {
   background-color: #3AFA62;
   color: #3f3f3f;
 }
