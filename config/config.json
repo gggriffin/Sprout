@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "npg12345",
+    "password": "",
     "database": "sprout_db",
     "host": "localhost",
     "dialect": "mysql"
