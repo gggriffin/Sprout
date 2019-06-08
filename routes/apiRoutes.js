@@ -19,9 +19,9 @@ module.exports = function(app) {
    app.get("/api/apiLists", function(req, res) {
     db.apiLists.findAll({}).then(function(dbapiLists) {
       res.json(dbapiLists);
-      
     });
   });
+
 
   // Create a new projectExample
   app.post("/api/projectExample", function(req, res) {
