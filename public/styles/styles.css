@@ -12,21 +12,6 @@
   font-size: .75em;
 }
 
-.list-group-item {
-  line-height: 2.5;
-}
-/* Header tile. Need to remove border-bottom when navbar is complete*/
-.header {
-  background-color: #3f3f3f;
-  border-bottom: 50px solid #FFFFFF;
-}
-
-/* Header gif on page load. Needs to be resized for different screen sizes in media query*/
-.header-gif {
-  width: 40vh;
-  height: 40vh;
-}
-
 /* Creates border/background for featured content*/
 .feature {
 border: solid 10px #FFFFFF;
@@ -44,3 +29,63 @@ font-weight: bold;
 .footer {
   background-color: #FFFFFF;
 }
+
+/* Header tile. Need to remove border-bottom when navbar is complete*/
+.header {
+  background-color: #3f3f3f;
+  border-bottom: 50px solid #FFFFFF;
+}
+
+/* Header gif on page load. Needs to be resized for different screen sizes in media query*/
+.header-gif {
+  width: 40vh;
+  height: 40vh;
+}
+
+.list-group-item {
+  line-height: 2.5;
+}
+
+/* Buttons to trigger various form submission tiles */
+.suggestBtn {
+  border: 5px solid #FFFFFF;
+  border-radius: 25%;
+  background-color: #3f3f3f;
+  color: #3AFA62;
+  font-weight: bold;
+  font-size: 1.5em;
+  height: 18vh;
+  width: 18vh;
+}
+
+.suggestBtn:hover {
+  background-color: #3AFA62;
+  color: #3f3f3f;
+}
+
+.suggest-form {
+border: solid 10px #3AFA62;
+border-radius: 15px;
+background-color: #3f3f3f;
+color: #FFFFFF;
+}
+
+.suggest-submit-btn {
+  background-color: #FFFFFF;
+  color: #3f3f3f;
+  border-radius: 15px;
+}
+
+.suggest-submit-btn:hover {
+  background-color: #3AFA62;
+  color: #3f3f3f;
+}
+
+.suggest-title {
+color: #FFFFFF;
+font-weight: bold;
+padding-bottom: .75em;
+border-bottom: dotted #3AFA62;
+}
+
+
