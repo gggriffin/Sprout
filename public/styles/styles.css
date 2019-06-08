@@ -30,10 +30,9 @@ font-weight: bold;
   background-color: #FFFFFF;
 }
 
-/* Header tile. Need to remove border-bottom when navbar is complete*/
+/* Header tile.*/
 .header {
   background-color: #3f3f3f;
-  border-bottom: 50px solid #FFFFFF;
 }
 
 /* Header gif on page load. Needs to be resized for different screen sizes in media query*/
