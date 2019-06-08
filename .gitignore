@@ -68,3 +68,4 @@ node_modules
 npm-debug.log
  dev
 .env
+config
