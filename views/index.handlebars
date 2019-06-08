@@ -3,14 +3,39 @@
   <img src="/assets/img/Sprout Header.gif" class="header-gif offset-4 col-sm-4" alt="">
 </div>
 
+{{! Navbar}}
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #FFFFFF">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Sign Up/Login</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar navbar-nav mr-auto offset-9">
+        <li class="nav-item">
+          <a class="nav-link" href="/trending">Trending</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/collaborate">Collaborate</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/projects">Projects</a>
+        </li>
+      </ul>
+      </div>
+    </div>
+</nav>
+
 {{! Start of Background Div}}
 <div class="background mb-5">
 
   {{! Sprout Summary Feature Tile}}
   <div class="row">
-    <div class="col-6 offset-3 text-center mt-5 feature mb-5">
+    <div class="col-8 offset-2 text-center mt-5 feature mb-5">
       <h3 class="mt-3 feature-title">Why are we here?</h3>
-      <p class="mt-3"> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut sit iste tempora qui illo, aperiam
+      <p class="mt-3"> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut sit iste tempora qui illo,
+        aperiam
         enim nobis.
         Eligendi corrupti odio sint deserunt non nam consectetur molestias, ratione, iusto ipsam suscipit.</p>
 
@@ -26,8 +51,10 @@
   <div class="row mb-5">
     <div class="col-3 text-center mt-5 feature offset-1">
       <h4 class="mt-3 feature-title">Trending</h4>
-      <p"mt-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi, necessitatibus iure hic libero error
-        laboriosam, neque, mollitia aspernatur similique ea vero repellat eius exercitationem saepe quaerat officia
+      <p"mt-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi, necessitatibus iure hic libero
+        error
+        laboriosam, neque, mollitia aspernatur similique ea vero repellat eius exercitationem saepe quaerat
+        officia
         veniam. Ex, velit.</p>
 
         {{! Font Awesome Icon Stylings: Fire}}
@@ -42,14 +69,16 @@
     {{! Collaborate Feature Tile}}
     <div class="col-3 text-center mt-5 mr-5 ml-5 feature">
       <h4 class="mt-3 feature-title">Collaborate</h4>
-      <p"mt-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi, necessitatibus iure hic libero error
-        laboriosam, neque, mollitia aspernatur similique ea vero repellat eius exercitationem saepe quaerat officia
+      <p"mt-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi, necessitatibus iure hic libero
+        error
+        laboriosam, neque, mollitia aspernatur similique ea vero repellat eius exercitationem saepe quaerat
+        officia
         veniam. Ex, velit.</p>
 
         {{! Font Awesome Icon Stylings: Book}}
         <span style="font-size: 3em; color: #3AFA62">
           <a href="/collaborate" style="color: #3AFA62">
-          <i class="fas fa-book-open mb-3"></i>
+            <i class="fas fa-book-open mb-3"></i>
           </a>
         </span>
 
@@ -58,44 +87,46 @@
     {{! Projects Feature Tile}}
     <div class="col-3 text-center mt-5 feature">
       <h4 class="mt-3 feature-title">Projects</h4>
-      <p"mt-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi, necessitatibus iure hic libero error
-        laboriosam, neque, mollitia aspernatur similique ea vero repellat eius exercitationem saepe quaerat officia
+      <p"mt-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi, necessitatibus iure hic libero
+        error
+        laboriosam, neque, mollitia aspernatur similique ea vero repellat eius exercitationem saepe quaerat
+        officia
         veniam. Ex, velit.</p>
 
         {{! Font Awesome Icon Stylings: Project}}
         <span style="font-size: 3em; color: #3AFA62">
           <a href="/projects" style="color: #3AFA62">
-          <i class="fas fa-project-diagram mb-3"></i>
+            <i class="fas fa-project-diagram mb-3"></i>
           </a>
         </span>
 
     </div>
   </div>
-  
+
 </div>
 {{! End of .background div}}
 
 
 {{! Footer}}
 <div class="row text-center mt-0">
-    <div class="col-12 footer">
+  <div class="col-12 footer">
 
-        {{! Font Awesome Icon Stylings: Github}}
-      <span style="font-size: 3em">
-        <a href="https://github.com/BrittaB/Sprout" style="color: #3f3f3f" target="_blank">
+    {{! Font Awesome Icon Stylings: Github}}
+    <span style="font-size: 3em">
+      <a href="https://github.com/BrittaB/Sprout" style="color: #3f3f3f" target="_blank">
         <i class="fab fa-github"></i>
-        </a>
-      </span>
+      </a>
+    </span>
 
-        {{! Font Awesome Icon Stylings: Plant (Contact)}}
-       <span style="font-size: 2.5em">
-        <a href="" style="color: #FFFFFF; background-color: #3f3f3f; border-radius: 15px;" target="_blank">
+    {{! Font Awesome Icon Stylings: Plant (Contact)}}
+    <span style="font-size: 2.5em">
+      <a href="" style="color: #FFFFFF; background-color: #3f3f3f; border-radius: 15px;" target="_blank">
         <i class="fas fa-seedling"></i>
-        </a>
-      </span>
+      </a>
+    </span>
 
-      <div class="col-12 text-center">
-        <p class="copyright">Copyright © 2019</p>
-      </div>
+    <div class="col-12 text-center">
+      <p class="copyright">Copyright © 2019</p>
     </div>
   </div>
+</div>
