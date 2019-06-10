@@ -12,11 +12,33 @@
     crossorigin="anonymous"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 
+
   <title>Sprout</title>
 </head>
 
 <body>
   {{{body}}}
 </body>
+<script >
+$(document).ready(function () {  
+   $("#pbtn").on("click", function(event) {
+    event.preventDefault();
+    var newProject = {
+      title: $("#ptitle").val().trim(),
+      body: $("#pbody").val().trim(),
+      skills: $("#pskill").val().trim(),
+      link: $("#plink").val().trim()
+    };
+    $.post("/api/newProject", newProject)
+    .done(function(data){
+      console.log(data);
+    });
+    $("#ptitle").val("");
+    $("#pbody").val("");
+    $("#pskill").val("");
+    $("#plink").val("");
+  });
+  });
 
+</script>
 </html>

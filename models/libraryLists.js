@@ -16,13 +16,21 @@ module.exports = function (sequelize, DataTypes) {
         },
         score: {
             type: DataTypes.INTEGER,
-            allowNull: false,
+            allowNull: true,
             validate: {
                 len: [1]
             }
         },
         link: {
             type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+                len: [1]
+            }
+        },
+        type: {
+            type: DataTypes.STRING,
+            defaultValue: "Other",
             allowNull: false,
             validate: {
                 len: [1]

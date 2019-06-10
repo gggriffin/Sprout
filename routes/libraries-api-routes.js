@@ -10,13 +10,9 @@ module.exports = function(app) {
   });
 
   // Create a new libraryLists
-  app.post("/api/libraryLists", function(req, res) {
-    var getData = req.body; 
-    var title = getData.libraryTitleSuggest;
-    var description = getData.exampleFormControlTextarea1;
-    var links = getData.librarySourceSuggest;
-    // var type = getData.libraryTypeSuggest;
-    db.libraryLists.create(title, description, links).then(function(dblibraryLists) {
+  app.post("/api/newLib", function(req, res) {
+    db.libraryLists.create(req.body)
+    .then(function(dblibraryLists) {
       res.json(dblibraryLists);
     });
   });
