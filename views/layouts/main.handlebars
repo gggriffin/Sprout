@@ -38,6 +38,40 @@ $(document).ready(function () {
     $("#pskill").val("");
     $("#plink").val("");
   });
+ 
+   $("#abtn").on("click", function(event) {
+    event.preventDefault();
+    var newProject = {
+      title: $("#atitle").val().trim(),
+      body: $("#abody").val().trim(),
+      link: $("#alink").val().trim()
+    };
+    $.post("/api/newApi", newProject)
+    .done(function(data){
+      console.log(data);
+    });
+    $("#atitle").val("");
+    $("#abody").val("");
+    $("#alink").val("");
+  });
+  
+   $("#lbtn").on("click", function(event) {
+    event.preventDefault();
+    var newProject = {
+      title: $("#ltitle").val().trim(),
+      body: $("#lbody").val().trim(),
+      type: $("#ltype").val().trim(),
+      link: $("#llink").val().trim()
+    };
+    $.post("/api/newLib", newProject)
+    .done(function(data){
+      console.log(data);
+    });
+    $("#ltitle").val("");
+    $("#lbody").val("");
+    $("#ltype").val("");
+    $("#llink").val("");
+  });
   });
 
 </script>

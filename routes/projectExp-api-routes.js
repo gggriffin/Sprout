@@ -1,25 +1,26 @@
 var db = require("../models");
 
-module.exports = function(app) {
+module.exports = function (app) {
   // Get all projectExamples
-  app.get("/api/projectExamples", function(req, res) {
-    db.projectExamples.findAll({}).then(function(dbprojectExamples) {
-      
+  app.get("/api/projectExamples", function (req, res) {
+    db.projectExamples.findAll({}).then(function (dbprojectExamples) {
+
       res.json(dbprojectExamples);
-      
+
     });
   });
 
 
   // Create a new projectExamples
-  app.post("/api/newProject", function(req, res) {
+  app.post("/api/newProject", function (req, res) {
     db.projectExamples.create(
-      {title: req.body.title,
+      {
+        title: req.body.title,
         body: req.body.body,
         link: req.body.link,
         skills: req.body.skills,
       }
-      ).then(function(dbprojectExamples) {
+    ).then(function (dbprojectExamples) {
       res.json(dbprojectExamples);
     });
   });
