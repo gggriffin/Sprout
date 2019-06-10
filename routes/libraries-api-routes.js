@@ -1,24 +1,27 @@
 var db = require("../models");
 
-module.exports = function(app) {
+module.exports = function (app) {
   // Get all library lists
-  app.get("/api/libraryLists", function(req, res) {
-    db.libraryLists.findAll({}).then(function(dblibraryLists) {
+  app.get("/api/libraryLists", function (req, res) {
+    db.libraryLists.findAll({}).then(function (dblibraryLists) {
       res.json(dblibraryLists);
-      
+
     });
   });
 
   // Create a new libraryLists
-  app.post("/api/libraryLists", function(req, res) {
-    var getData = req.body; 
-    var title = getData.libraryTitleSuggest;
-    var description = getData.exampleFormControlTextarea1;
-    var links = getData.librarySourceSuggest;
-    // var type = getData.libraryTypeSuggest;
-    db.libraryLists.create(title, description, links).then(function(dblibraryLists) {
-      res.json(dblibraryLists);
-    });
+  app.post("/api/newLib", function (req, res) {
+    db.libraryLists.create(
+      {
+        title: req.body.title,
+        body: req.body.body,
+        link: req.body.link,
+        type: req.body.type,
+      }
+    )
+      .then(function (dblibraryLists) {
+        res.json(dblibraryLists);
+      });
   });
 
   // Delete an libraryLists by id

@@ -1,17 +1,23 @@
 var db = require("../models");
 
-module.exports = function(app) {
-   // Get all api Lists
-   app.get("/api/apiLists", function(req, res) {
-    db.apiLists.findAll({}).then(function(dbapiLists) {
+module.exports = function (app) {
+  // Get all api Lists
+  app.get("/api/apiLists", function (req, res) {
+    db.apiLists.findAll({}).then(function (dbapiLists) {
       res.json(dbapiLists);
     });
   });
 
 
   // Create a new apiLists
-  app.post("/api/apiLists", function(req, res) {
-    db.apiLists.create(req.body).then(function(dbapiLists) {
+  app.post("/api/newApi", function (req, res) {
+    db.apiLists.create(
+      {
+        title: req.body.title,
+        body: req.body.body,
+        link: req.body.link,
+      }
+    ).then(function (dbapiLists) {
       res.json(dbapiLists);
     });
   });
