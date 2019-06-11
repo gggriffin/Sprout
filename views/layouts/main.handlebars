@@ -21,6 +21,8 @@
 </body>
 <script >
 $(document).ready(function () {  
+  // submitting new project  
+  var projectdb;
    $("#pbtn").on("click", function(event) {
     event.preventDefault();
     var newProject = {
@@ -32,13 +34,51 @@ $(document).ready(function () {
     $.post("/api/newProject", newProject)
     .done(function(data){
       console.log(data);
+      projectdb = data;
     });
     $("#ptitle").val("");
     $("#pbody").val("");
     $("#pskill").val("");
     $("#plink").val("");
+
+
+//end of project function
   });
- 
+   $.get("/api/projectExamples", projectExamples)
+    .done(function(data){
+      console.log(data);
+      projectdb = data;
+    });
+  // initialize project exmaple row
+var blogContainer = $(".blog-container");
+function initializeRows() {
+    var postsToAdd = [];
+    for (var i = 0; i < projectdb.length; i++) {
+      postsToAdd.push(createNewRow(projectdb[i]));
+    }
+    blogContainer.append(postsToAdd);
+  }
+  // This function constructs a post's HTML
+  function createNewRow(displayproject) {
+    var newPostCard = $("<div>");
+    newPostCard.addClass("card");
+    var newPostCardHeading = $("<div>");
+    newPostCardHeading.addClass("card-header");
+    var newPostTitle = $("<h2>");
+    var newPostCardBody = $("<div>");
+    newPostCardBody.addClass("card-body");
+    var newPostBody = $("<p>");
+    newPostTitle.text(displayproject.title + " ");
+    newPostBody.text(displayproject.body);
+    newPostDate.text(formattedDate);
+    newPostCardBody.append(newPostBody);
+    newPostCard.append(newPostCardHeading);
+    newPostCard.append(newPostCardBody);
+    newPostCard.data("displayproject", displayproject);
+    return newPostCard;
+  }
+
+ // submitting new API
    $("#abtn").on("click", function(event) {
     event.preventDefault();
     var newProject = {
@@ -54,7 +94,7 @@ $(document).ready(function () {
     $("#abody").val("");
     $("#alink").val("");
   });
-  
+  // submitting new library
    $("#lbtn").on("click", function(event) {
     event.preventDefault();
     var newProject = {
@@ -72,6 +112,8 @@ $(document).ready(function () {
     $("#ltype").val("");
     $("#llink").val("");
   });
+
+
   });
 
 </script>
