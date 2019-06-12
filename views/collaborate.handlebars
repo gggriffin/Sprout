@@ -42,7 +42,7 @@
 <div class="background mb-5">
 
   {{! Collaborate description tile}}
-  <div class="row">
+  <div class="row collabInfo">
     <div class="col-8 offset-2 text-center mt-5 feature mb-5">
       <h3 class="mt-3 feature-title">Contributing</h3>
       <p class="mt-3">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptas laudantium dicta officia autem
@@ -56,14 +56,14 @@
   </div>
 
   {{! Submission buttons}}
-  <div class="text-center">
-    <button class="btn suggestBtn col-3 mt-5 mb-5 hvr-bounce-to-top">Suggest Library</button>
-    <button class="btn suggestBtn col-3 mt-5 mb-5 ml-5 mr-5 hvr-bounce-to-top">Suggest <br> API</button>
-    <button class="btn suggestBtn col-3 mt-5 mb-5 hvr-bounce-to-top">Submit Project</button>
+  <div class="text-center collabInfo">
+    <button class="btn suggestBtn col-3 mt-5 mb-5 hvr-bounce-to-top" id="librarySuggestBtn">Suggest Library</button>
+    <button class="btn suggestBtn col-3 mt-5 mb-5 ml-5 mr-5 hvr-bounce-to-top" id="apiSuggestBtn">Suggest <br> API</button>
+    <button class="btn suggestBtn col-3 mt-5 mb-5 hvr-bounce-to-top" id="projectSuggestBtn">Submit Project</button>
   </div>
 
   {{! User Library Submission Form}}
-  <div class="row">
+  <div class="row subForm" id="librarySubForm">
     <div class="col-8 offset-2 mt-5 feature mb-5 suggest-form">
       <h3 class="mt-3 text-center suggest-title">Suggest a Library</h3>
 
@@ -104,7 +104,7 @@
   </div>
 
   {{! User API Submission Form}}
-  <div class="row">
+  <div class="row subForm" id="apiSubForm">
     <div class="col-8 offset-2 mt-5 feature mb-5 suggest-form">
       <h3 class="mt-3 text-center suggest-title">Suggest an API</h3>
 
@@ -128,7 +128,7 @@
   </div>
 
   {{! User Project Submission Form}}
-  <div class="row">
+  <div class="row subForm" id="projectSubForm">
     <div class="col-8 offset-2 mt-5 feature mb-5 suggest-form">
       <h3 class="mt-3 text-center suggest-title">Submit a Project</h3>
 

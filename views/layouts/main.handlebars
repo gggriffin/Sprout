@@ -21,4 +21,34 @@
   {{{body}}}
 </body>
 
+  <script>
+    function hideForms() {
+  $('.subForm').hide();
+};
+
+$('#librarySuggestBtn').on('click', function () {
+  $('#librarySubForm').show();
+  $('.collabInfo').hide();
+});
+
+$('#apiSuggestBtn').on('click', function () {
+  $('#apiSubForm').show();
+    $('.collabInfo').hide();
+});
+
+$('#projectSuggestBtn').on('click', function () {
+  $('#projectSubForm').show();
+    $('.collabInfo').hide();
+});
+
+$('#librarySubmitBtn').on('click', function () {
+  hideForms();
+  $('.collabInfo').show();
+})
+
+$(document).ready(function() {
+  hideForms();
+});
+  </script>
 </html>
+

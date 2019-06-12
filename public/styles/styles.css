@@ -7,6 +7,7 @@
   /* background: rgb(147,129,255);
 background: linear-gradient(131deg, #2E1760 0%, #5A6489 50%, #2E1760 100%); */
 background-color: #9381ff;
+
 }
 
 .collaborate-nav {
@@ -42,6 +43,12 @@ font-weight: bold;
 
 .footer-icon:hover {
   color: #3AFA62;
+}
+
+.grow-icon {
+  background-color: #3f3f3f;
+  color: #48ACF0;
+  font-size: 1.5em;
 }
 
 /* Header tile.*/
