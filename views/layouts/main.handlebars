@@ -6,11 +6,14 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
     crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
   <script src="https://kit.fontawesome.com/0ff456ab54.js"></script>
   <link rel="stylesheet" href="/styles/styles.css" media="screen" title="no title" charset="utf-8">
   <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
     crossorigin="anonymous"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="/js/index.js"></script>
+
 
   <title>Sprout</title>
 </head>
@@ -18,5 +21,98 @@
 <body>
   {{{body}}}
 </body>
+<script >
+$(document).ready(function () {  
+   $("#pbtn").on("click", function(event) {
+    event.preventDefault();
+    var newProject = {
+      title: $("#ptitle").val().trim(),
+      body: $("#pbody").val().trim(),
+      skills: $("#pskill").val().trim(),
+      link: $("#plink").val().trim()
+    };
+    $.post("/api/newProject", newProject)
+    .done(function(data){
+      console.log(data);
+    });
+    $("#ptitle").val("");
+    $("#pbody").val("");
+    $("#pskill").val("");
+    $("#plink").val("");
+  });
+ 
+   $("#abtn").on("click", function(event) {
+    event.preventDefault();
+    var newProject = {
+      title: $("#atitle").val().trim(),
+      body: $("#abody").val().trim(),
+      link: $("#alink").val().trim()
+    };
+    $.post("/api/newApi", newProject)
+    .done(function(data){
+      console.log(data);
+    });
+    $("#atitle").val("");
+    $("#abody").val("");
+    $("#alink").val("");
+  });
+  
+   $("#lbtn").on("click", function(event) {
+    event.preventDefault();
+    var newProject = {
+      title: $("#ltitle").val().trim(),
+      body: $("#lbody").val().trim(),
+      type: $("#ltype").val().trim(),
+      link: $("#llink").val().trim()
+    };
+    $.post("/api/newLib", newProject)
+    .done(function(data){
+      console.log(data);
+    });
+    $("#ltitle").val("");
+    $("#lbody").val("");
+    $("#ltype").val("");
+    $("#llink").val("");
+  });
+  });
 
+    function hideForms() {
+  $('.subForm').hide();
+};
+
+$('#librarySuggestBtn').on('click', function () {
+  $('#librarySubForm').show();
+  $('.collabInfo').hide();
+});
+
+$('#apiSuggestBtn').on('click', function () {
+  $('#apiSubForm').show();
+    $('.collabInfo').hide();
+});
+
+$('#projectSuggestBtn').on('click', function () {
+  $('#projectSubForm').show();
+    $('.collabInfo').hide();
+});
+
+$('#lbtn').on('click', function () {
+  hideForms();
+  $('.collabInfo').show();
+})
+
+$('#abtn').on('click', function () {
+  hideForms();
+  $('.collabInfo').show();
+})
+
+$('#pbtn').on('click', function () {
+  hideForms();
+  $('.collabInfo').show();
+})
+
+$(document).ready(function() {
+  hideForms();
+});
+  </script>
 </html>
+

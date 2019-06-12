@@ -1,36 +1,45 @@
 {{! Header with Sprout gif}}
 <div class="header row">
   <a href="/" class="offset-3 col-6 text-center">
-  <img src="/assets/img/Sprout Header.gif" class="header-gif" alt="">
+    <img src="/assets/img/Sprout Header.gif" class="header-gif" alt="">
   </a>
 </div>
 
 {{! Navbar}}
 <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #FFFFFF">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Sign Up/Login</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    <div class="hvr-icon-fade">
+    <a class="navbar-brand hvr-skew-forward hvr-icon" href="#">Sign Up/Login</a>
+    </div>
+    <button class="navbar-toggler green-hover" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar navbar-nav mr-auto offset-9">
-        <li class="nav-item">
-          <a class="nav-link" href="/trending">Trending</a>
+      <ul class="navbar navbar-nav mr-auto offset-8">
+        <li class="nav-item hvr-grow">
+          <a class="nav-link hvr-icon-fade" href="/trending">Trending
+            <i class="fas fa-fire mb-3 mt-3 hvr-icon"></i>
+          </a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/collaborate">Collaborate</a>
+        <li class="nav-item collaborate-nav hvr-grow">
+          <a class="nav-link hvr-icon-fade" href="/collaborate">Collaborate
+            <i class="fas fa-book-open hvr-icon"></i>
+          </a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/projects">Projects</a>
+        <li class="nav-item hvr-grow">
+          <a class="nav-link hvr-icon-fade" href="/projects">Projects
+            <i class="fas fa-project-diagram hvr-icon"></i>
+          </a>
         </li>
       </ul>
-      </div>
     </div>
+  </div>
 </nav>
 
-{{! Start of Background Div}}
-<div class="background mb-5">
+
+{{! Start of .background d iv}}
+<div class="background">
 
   {{! Sprout Summary Feature Tile}}
   <div class="row">
@@ -60,9 +69,9 @@
         veniam. Ex, velit.</p>
 
         {{! Font Awesome Icon Stylings: Fire}}
-        <span style="font-size: 3em; color: #3AFA62">
-          <a href="/trending" style="color: #3AFA62">
-            <i class="fas fa-fire mb-3"></i>
+        <span style="font-size: 3em; color: #E4572E">
+          <a href="/trending" style="color: #E4572E">
+            <i class="fas fa-fire mb-3 hvr-grow"></i>
           </a>
         </span>
 
@@ -78,9 +87,9 @@
         veniam. Ex, velit.</p>
 
         {{! Font Awesome Icon Stylings: Book}}
-        <span style="font-size: 3em; color: #3AFA62">
-          <a href="/collaborate" style="color: #3AFA62">
-            <i class="fas fa-book-open mb-3"></i>
+        <span style="font-size: 3em; color: #48ACF0">
+          <a href="/collaborate" style="color: #48ACF0">
+            <i class="fas fa-book-open hvr-grow mb-3"></i>
           </a>
         </span>
 
@@ -96,9 +105,9 @@
         veniam. Ex, velit.</p>
 
         {{! Font Awesome Icon Stylings: Project}}
-        <span style="font-size: 3em; color: #3AFA62">
-          <a href="/projects" style="color: #3AFA62">
-            <i class="fas fa-project-diagram mb-3"></i>
+        <span style="font-size: 3em; color: #FFBE0B">
+          <a href="/projects" style="color: #FFBE0B">
+            <i class="fas fa-project-diagram mb-3 hvr-grow"></i>
           </a>
         </span>
 
@@ -115,14 +124,14 @@
 
     {{! Font Awesome Icon Stylings: Github}}
     <span style="font-size: 3em">
-      <a href="https://github.com/BrittaB/Sprout" style="color: #3f3f3f" target="_blank">
-        <i class="fab fa-github"></i>
+      <a href="https://github.com/BrittaB/Sprout" class="footer-icon" style="color: #3f3f3f" target="_blank">
+        <i class="fab fa-github footer"></i>
       </a>
     </span>
 
     {{! Font Awesome Icon Stylings: Plant (Contact)}}
     <span style="font-size: 2.5em">
-      <a href="" style="color: #FFFFFF; background-color: #3f3f3f; border-radius: 15px;" target="_blank">
+      <a href="/" class="footer-icon" style="border-radius: 15px; background-color:#3f3f3f" target="_blank">
         <i class="fas fa-seedling"></i>
       </a>
     </span>

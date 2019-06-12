@@ -97,3 +97,17 @@ var handleDeleteBtnClick = function() {
 // Add event listeners to the submit and delete buttons
 $submitBtn.on("click", handleFormSubmit);
 $exampleList.on("click", ".delete", handleDeleteBtnClick);
+
+
+//Hide/Show functionality for Collaborate submission forms
+function hideForms() {
+  $('.subForm').hide();
+};
+
+$('#librarySuggestBtn').on('click', function () {
+  console.log('Library Suggest Clicked')
+});
+
+$(document).ready(function() {
+  hideForms();
+});

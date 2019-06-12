@@ -3,14 +3,9 @@ var db = require("../models");
 module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
-    db.projectExamples.findAll({}).then(function(dbprojectExamples) {
-      res.render("index", {
-        msg: "Welcome!",
-        examples: dbprojectExamples
-      });
-    });
+      res.render("index");
   });
-  
+
   app.get('/trending', function(req, res) {
     res.render('trending');
   });
@@ -27,13 +22,12 @@ module.exports = function(app) {
     res.render('collaborate');
   });
 
+
   
-  
+
   // Render 404 page for any unmatched routes
-  app.get("*", function(req, res) {
-    res.render("404");
-  });
-
-
+  // app.get("*", function(req, res) {
+  //   res.render("404");
+  // });
 };
 
