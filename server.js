@@ -22,8 +22,10 @@ app.engine(
 app.set("view engine", "handlebars");
 
 // Routes
-require("./routes/apiRoutes")(app);
-require("./routes/htmlRoutes")(app);
+require("./routes/apis-api-routes")(app);
+require("./routes/html-routes")(app);
+require("./routes/libraries-api-routes")(app);
+require("./routes/projectExp-api-routes")(app);
 
 var syncOptions = { force: false };
 

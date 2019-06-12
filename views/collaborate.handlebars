@@ -63,96 +63,98 @@
   </div>
 
   {{! User Library Submission Form}}
-  <div class="row subForm" id="librarySubForm">
+  <div class="row subForm" id="librarySubForm" method="POST">
     <div class="col-8 offset-2 mt-5 feature mb-5 suggest-form">
       <h3 class="mt-3 text-center suggest-title">Suggest a Library</h3>
 
       <div class="form-group">
         <label for="libraryTitle">Title</label>
-        <input class="form-control" id="libraryTitleSuggest" placeholder="What's the name of the library?">
+        <input class="form-control" id="ltitle" placeholder="What's the name of the library?">
       </div>
 
       <div class="form-group">
         <label for="libraryType">Type</label>
-        <select class="form-control" id="libraryTypeSuggest">
+        <select class="form-control" id="ltype">
           <option>. . .</option>
-          <option>HTML</option>
-          <option>CSS</option>
-          <option>Javascript</option>
-          <option>Python</option>
-          <option>Ruby</option>
-          <option>Java</option>
-          <option>MySQL</option>
-          <option>C++</option>
-          <option>Other</option>
+          <option value="HTML">HTML</option>
+          <option value="CSS">CSS</option>
+          <option value="Javascript">Javascript</option>
+          <option value="Python">Python</option>
+          <option value="Ruby">Ruby</option>
+          <option value="Java">Java</option>
+          <option value="MySQL">MySQL</option>
+          <option value="C++">C++</option>
+          <option value="Other">Other</option>
         </select>
       </div>
 
       <div class="form-group">
         <label for="libraryTitle">Source</label>
-        <input class="form-control" id="librarySourceSuggest" placeholder="Link to repository/documentation">
+        <input class="form-control" id="llink" placeholder="Link to repository/documentation">
       </div>
 
       <div class="form-group">
         <label for="libraryDescription">Description</label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="What does this library do?"></textarea>
+        <textarea class="form-control" id="lbody" rows="3" placeholder="What does this library do?"></textarea>
       </div>
 
-      <button class="btn suggest-submit-btn mb-3 float-right" id="librarySubmitBtn">Submit</button>
+      <button class="btn suggest-submit-btn mb-3 float-right" id="lbtn">Submit</button>
 
     </div>
   </div>
 
   {{! User API Submission Form}}
-  <div class="row subForm" id="apiSubForm">
+  <div class="row subForm" id="apiSubForm" method="POST">
     <div class="col-8 offset-2 mt-5 feature mb-5 suggest-form">
       <h3 class="mt-3 text-center suggest-title">Suggest an API</h3>
 
       <div class="form-group">
         <label for="apiTitle">Title</label>
-        <input class="form-control" id="apiTitleSuggest" placeholder="What's the name of the API?">
+        <input class="form-control" id="atitle" placeholder="What's the name of the API?">
       </div>
 
       <div class="form-group">
         <label for="apiSource">Source</label>
-        <input class="form-control" id="apiSourceSuggest" placeholder="Link to API/documentation">
+        <input class="form-control" id="alink" placeholder="Link to API/documentation">
       </div>
 
       <div class="form-group">
         <label for="apiDescription">Description</label>
-        <textarea class="form-control" rows="3" id="apiDescriptionSuggest" placeholder="What does this API do?"></textarea>
+        <textarea class="form-control" rows="3" id="abody" placeholder="What does this API do?"></textarea>
       </div>
 
-      <button class="btn suggest-submit-btn mb-3 float-right" id="apiSubmitBtn">Submit</button>
+      <button class="btn suggest-submit-btn mb-3 float-right" id="abtn">Submit</button>
     </div>
   </div>
 
   {{! User Project Submission Form}}
-  <div class="row subForm" id="projectSubForm">
+
+  <div class="row subForm" id="projectSubForm" method="POST">
+
     <div class="col-8 offset-2 mt-5 feature mb-5 suggest-form">
       <h3 class="mt-3 text-center suggest-title">Submit a Project</h3>
 
       <div class="form-group">
         <label for="apiTitle">Title</label>
-        <input class="form-control" id="projectTitleSuggest" placeholder="What's the name of the project">
+        <input class="form-control" id="ptitle" placeholder="What's the name of the project">
       </div>
 
       <div class="form-group">
         <label for="apiSource">Source</label>
-        <input class="form-control" id="projectSourceSuggest" placeholder="Link to project source/repository">
+        <input class="form-control" id="plink" placeholder="Link to project source/repository">
       </div>
 
       <div class="form-group">
         <label for="apiDescription">Description</label>
-        <textarea class="form-control" rows="3" id="projectDescriptionSuggest" placeholder="What does this project do?"></textarea>
+        <textarea class="form-control" rows="3" id="pbody" placeholder="What does this project do?"></textarea>
       </div>
 
       <div class="form-group">
         <label for="projectSkills">Skills</label>
-        <textarea class="form-control" rows="3" id="projectSkillsSuggest" placeholder="What skills are demonstrated, and which technologies are used?"></textarea>
+        <textarea class="form-control" rows="3" id="pskill" placeholder="What skills are demonstrated, and which technologies are used?"></textarea>
       </div>
 
-      <button class="btn suggest-submit-btn mb-3 float-right" id="projectSubmitBtn">Submit</button>
+      <button class="btn suggest-submit-btn mb-3 float-right" id="pbtn">Submit</button>
 
     </div>
   </div>
@@ -182,3 +184,6 @@
     </div>
   </div>
 </div>
+</div>
+
+

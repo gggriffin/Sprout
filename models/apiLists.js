@@ -16,7 +16,7 @@ module.exports = function (sequelize, DataTypes) {
     },
     score: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      allowNull: true,
       validate: {
         len: [1]
       }
