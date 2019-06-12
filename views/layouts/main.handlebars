@@ -76,8 +76,6 @@ $(document).ready(function () {
   });
   });
 
-<<<<<<< HEAD
-  <script>
     function hideForms() {
   $('.subForm').hide();
 };
@@ -97,7 +95,17 @@ $('#projectSuggestBtn').on('click', function () {
     $('.collabInfo').hide();
 });
 
-$('#librarySubmitBtn').on('click', function () {
+$('#lbtn').on('click', function () {
+  hideForms();
+  $('.collabInfo').show();
+})
+
+$('#abtn').on('click', function () {
+  hideForms();
+  $('.collabInfo').show();
+})
+
+$('#pbtn').on('click', function () {
   hideForms();
   $('.collabInfo').show();
 })
@@ -108,7 +116,3 @@ $(document).ready(function() {
   </script>
 </html>
 
-=======
-</script>
-</html>
->>>>>>> 39d795d2ee0876723a5be261e79c5bda9a8175d8
