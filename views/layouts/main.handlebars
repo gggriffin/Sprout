@@ -116,10 +116,44 @@
       $("#ltype").val("");
       $("#llink").val("");
     });
+// =====================================
+    function hideForms() {
+  $('.subForm').hide();
+};
 
+$('#librarySuggestBtn').on('click', function () {
+  $('#librarySubForm').show();
+  $('.collabInfo').hide();
+});
 
-  });
-//============================================
-</script>
+$('#apiSuggestBtn').on('click', function () {
+  $('#apiSubForm').show();
+    $('.collabInfo').hide();
+});
 
+$('#projectSuggestBtn').on('click', function () {
+  $('#projectSubForm').show();
+    $('.collabInfo').hide();
+});
+
+$('#lbtn').on('click', function () {
+  hideForms();
+  $('.collabInfo').show();
+})
+
+$('#abtn').on('click', function () {
+  hideForms();
+  $('.collabInfo').show();
+})
+
+$('#pbtn').on('click', function () {
+  hideForms();
+  $('.collabInfo').show();
+})
+
+$(document).ready(function() {
+  hideForms();
+});
+  </script>
 </html>
+
