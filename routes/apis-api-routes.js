@@ -23,6 +23,11 @@ module.exports = function (app) {
     });
   });
 
+
+
+
+
+
   // Delete an apiLists by id
   // app.delete("/api/apiLists/:id", function(req, res) {
   //   db.apiLists.destroy({ where: { id: req.params.id } }).then(function(dbapiLists) {
