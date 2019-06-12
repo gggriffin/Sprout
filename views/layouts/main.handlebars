@@ -3,14 +3,17 @@
 
 <head>
   <meta charset="utf-8">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet"
+    href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
   <script src="https://kit.fontawesome.com/0ff456ab54.js"></script>
   <link rel="stylesheet" href="/styles/styles.css" media="screen" title="no title" charset="utf-8">
   <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
     crossorigin="anonymous"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="/js/index.js"></script>
 
 
   <title>Sprout</title>
@@ -19,102 +22,104 @@
 <body>
   {{{body}}}
 </body>
-<script >
-$(document).ready(function () {  
-  // submitting new project  
-  var projectdb;
-   $("#pbtn").on("click", function(event) {
-    event.preventDefault();
-    var newProject = {
-      title: $("#ptitle").val().trim(),
-      body: $("#pbody").val().trim(),
-      skills: $("#pskill").val().trim(),
-      link: $("#plink").val().trim()
-    };
-    $.post("/api/newProject", newProject)
-    .done(function(data){
-      console.log(data);
-      projectdb = data;
+<script>
+  $(document).ready(function () {
+    // submitting new project  
+    var projectdb;
+    $("#pbtn").on("click", function (event) {
+      event.preventDefault();
+      var newProject = {
+        title: $("#ptitle").val().trim(),
+        body: $("#pbody").val().trim(),
+        skills: $("#pskill").val().trim(),
+        link: $("#plink").val().trim()
+      };
+      $.post("/api/newProject", newProject)
+        .done(function (data) {
+          console.log(data);
+          projectdb = data;
+        });
+      $("#ptitle").val("");
+      $("#pbody").val("");
+      $("#pskill").val("");
+      $("#plink").val("");
+      //end of project function
     });
-    $("#ptitle").val("");
-    $("#pbody").val("");
-    $("#pskill").val("");
-    $("#plink").val("");
-
-
-//end of project function
-  });
-   $.get("/api/projectExamples", projectExamples)
-    .done(function(data){
-      console.log(data);
-      projectdb = data;
-    });
-  // initialize project exmaple row
-var blogContainer = $(".blog-container");
-function initializeRows() {
-    var postsToAdd = [];
-    for (var i = 0; i < projectdb.length; i++) {
-      postsToAdd.push(createNewRow(projectdb[i]));
+    //render project database
+    function renderProjects() {
+      $.get("/api/projectExamples", getProjectDb);
     }
-    blogContainer.append(postsToAdd);
-  }
-  // This function constructs a post's HTML
-  function createNewRow(displayproject) {
-    var newPostCard = $("<div>");
-    newPostCard.addClass("card");
-    var newPostCardHeading = $("<div>");
-    newPostCardHeading.addClass("card-header");
-    var newPostTitle = $("<h2>");
-    var newPostCardBody = $("<div>");
-    newPostCardBody.addClass("card-body");
-    var newPostBody = $("<p>");
-    newPostTitle.text(displayproject.title + " ");
-    newPostBody.text(displayproject.body);
-    newPostDate.text(formattedDate);
-    newPostCardBody.append(newPostBody);
-    newPostCard.append(newPostCardHeading);
-    newPostCard.append(newPostCardBody);
-    newPostCard.data("displayproject", displayproject);
-    return newPostCard;
-  }
+    function getProjectDb(data) {
+      var rows = [];
+      for (var i = 0; i < data.length; i++) {
+        rows.push(data[i]);
+      }
+      console.log(rows);
+      return rows;
+    }
+    renderProjects();
+    //================================================
 
- // submitting new API
-   $("#abtn").on("click", function(event) {
-    event.preventDefault();
-    var newProject = {
-      title: $("#atitle").val().trim(),
-      body: $("#abody").val().trim(),
-      link: $("#alink").val().trim()
-    };
-    $.post("/api/newApi", newProject)
-    .done(function(data){
-      console.log(data);
+    // submitting new API
+    $("#abtn").on("click", function (event) {
+      event.preventDefault();
+      var newProject = {
+        title: $("#atitle").val().trim(),
+        body: $("#abody").val().trim(),
+        type: $("#atype").val().trim(),
+        link: $("#alink").val().trim()
+      };
+      $.post("/api/newApi", newProject)
+        .done(function (data) {
+          console.log(data);
+        });
+      $("#atitle").val("");
+      $("#abody").val("");
+      $("#alink").val("");
     });
-    $("#atitle").val("");
-    $("#abody").val("");
-    $("#alink").val("");
-  });
-  // submitting new library
-   $("#lbtn").on("click", function(event) {
-    event.preventDefault();
-    var newProject = {
-      title: $("#ltitle").val().trim(),
-      body: $("#lbody").val().trim(),
-      type: $("#ltype").val().trim(),
-      link: $("#llink").val().trim()
+    //render api trending database
+    function renderApiTrend() {
+      $.get("/api/apiLists", getAPIS);
+    }
+    function getAPIS(data) {
+    
+      for (var i = 0; i < data.length; i++) {
+       console.log(data[i]);
+      var apiRow = $("<tr>");
+      apiRow.append("<td><a>"+ data[i].id +"</a></td>");  
+      apiRow.append("<td><a>"+ data[i].title +"</a></td>");  
+      apiRow.append("<td><a>"+ data[i].type +"</a></td>");  
+      apiRow.append("<td><a>"+ data[i].link +"</a></td>");  
+      apiRow.append("<td><a>"+ data[i].body +"</a></td>");  
+      apiRow.append("<td><a>"+ data[i].score +"</a></td>");  
+      $("#apiTrending").append(apiRow);
+      };
+      
     };
-    $.post("/api/newLib", newProject)
-    .done(function(data){
-      console.log(data);
+    renderApiTrend();
+    //================================================
+    // submitting new library
+    $("#lbtn").on("click", function (event) {
+      event.preventDefault();
+      var newProject = {
+        title: $("#ltitle").val().trim(),
+        body: $("#lbody").val().trim(),
+        type: $("#ltype").val().trim(),
+        link: $("#llink").val().trim()
+      };
+      $.post("/api/newLib", newProject)
+        .done(function (data) {
+          console.log(data);
+        });
+      $("#ltitle").val("");
+      $("#lbody").val("");
+      $("#ltype").val("");
+      $("#llink").val("");
     });
-    $("#ltitle").val("");
-    $("#lbody").val("");
-    $("#ltype").val("");
-    $("#llink").val("");
-  });
 
 
   });
-
+//============================================
 </script>
+
 </html>
