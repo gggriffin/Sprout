@@ -16,11 +16,17 @@ module.exports = function (app) {
         title: req.body.title,
         body: req.body.body,
         link: req.body.link,
+        type: req.body.type
       }
     ).then(function (dbapiLists) {
       res.json(dbapiLists);
     });
   });
+
+
+
+
+
 
   // Delete an apiLists by id
   // app.delete("/api/apiLists/:id", function(req, res) {
