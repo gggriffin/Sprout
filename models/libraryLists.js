@@ -1,14 +1,14 @@
 module.exports = function (sequelize, DataTypes) {
  var libraryLists = sequelize.define("libraryLists", {
         title: {
-            type: DataTypes.STRING,
+            type: DataTypes.STRING(75),
             allowNull: false,
             validate: {
                 len: [1]
             }
         },
         body: {
-            type: DataTypes.TEXT,
+            type: DataTypes.STRING(75),
             allowNull: false,
             validate: {
                 len: [1]
@@ -22,7 +22,7 @@ module.exports = function (sequelize, DataTypes) {
             }
         },
         link: {
-            type: DataTypes.STRING,
+            type: DataTypes.STRING(75),
             allowNull: false,
             validate: {
                 len: [1]

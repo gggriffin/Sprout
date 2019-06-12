@@ -1,14 +1,14 @@
 module.exports = function (sequelize, DataTypes) {
   var apiLists = sequelize.define("apiLists", {
     title: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(75),
       allowNull: false,
       validate: {
         len: [1]
       }
     },
     body: {
-      type: DataTypes.TEXT,
+      type: DataTypes.STRING(75),
       allowNull: false,
       validate: {
         len: [1]
@@ -22,14 +22,14 @@ module.exports = function (sequelize, DataTypes) {
       }
     },
     link: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(75),
       allowNull: false,
       validate: {
         len: [1]
       }
     },
     type: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(75),
       allowNull: false,
       validate: {
           len: [1]
