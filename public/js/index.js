@@ -100,10 +100,14 @@ $exampleList.on("click", ".delete", handleDeleteBtnClick);
 
 
 //Hide/Show functionality for Collaborate submission forms
-function hideAll() {
+function hideForms() {
   $('.subForm').hide();
-}
+};
 
-$(function () {
-  hideAll();
-})
+$('#librarySuggestBtn').on('click', function () {
+  console.log('Library Suggest Clicked')
+});
+
+$(document).ready(function() {
+  hideForms();
+});
