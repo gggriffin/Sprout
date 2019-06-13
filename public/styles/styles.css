@@ -58,8 +58,8 @@ font-weight: bold;
 
 /* Header gif on page load. Needs to be resized for different screen sizes in media query*/
 .header-gif {
-  width: 40vh;
-  height: 40vh;
+  width: 35vh;
+  height: 35vh;
 }
 
 /* Icon Bounce effect for submit/suggest buttons*/
@@ -274,5 +274,12 @@ border-bottom: dotted #3AFA62;
   font-weight: bold;
   padding-bottom: .75em;
   }
+
+/* .table {
+  height: 50vh;
+  display: block;
+  overflow: scroll;
+} */
+
 
 
