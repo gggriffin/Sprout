@@ -1,5 +1,5 @@
 #Sprout
-<img src="/images/SproutTitle.png" width=800px; height=300px;>
+<img src="/images/SproutTitle1.png" width=800px; height=300px;>
 
 Sprout is a platform for developers to connect and grow together. Stay on top of what is fresh and trending in tech so that you can grow your business, or even just yourself.
 
