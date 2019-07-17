@@ -23,7 +23,7 @@ passport.use(new GoogleStrategy({
 
      
     //db.users.create({id, provider, displayName, photo}, function (err, user) {
-         db.users.Create({where: {id, provider, displayName, photo}}, function (err, user) {
+         db.users.findOrCreate({where: {id, provider, displayName, photo}}, function (err, user) {
          return done(err, user);
        });
   }
