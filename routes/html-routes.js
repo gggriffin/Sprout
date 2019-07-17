@@ -12,7 +12,7 @@ var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 passport.use(new GoogleStrategy({
     clientID: "1013064070830-6v0qtle33qdbte5grurkvoht2n981rdv.apps.googleusercontent.com",
     clientSecret: "K4mBlQbOkJkVTuHlEHFuSI4U",
-    callbackURL: "http://sprout.com:8080/auth/google/callback" || "https://sprout-heroku.herokuapp.com/auth/google/callback" 
+    callbackURL:  "https://sprout-heroku.herokuapp.com/auth/google/callback" || "http://sprout.com:8080/auth/google/callback"
   },
   function(accessToken, refreshToken, profile, done) {
     console.log(profile);
