@@ -1,7 +1,10 @@
 var db = require("../models");
 
 module.exports = function (app) {
-  // Get all api Lists
+  
+  ////////////////////////////////////////////////////////
+  // Get All APIs
+
   app.get("/api/apiLists", function (req, res) {
     db.apiLists.findAll({
       order: [
@@ -12,8 +15,9 @@ module.exports = function (app) {
     });
   });
 
+  ////////////////////////////////////////////////////////
+  // Submit New API
 
-  // Create a new apiLists
   app.post("/api/newApi", function (req, res) {
     db.apiLists.create(
       {
@@ -28,7 +32,10 @@ module.exports = function (app) {
     });
   });
 
-  app.put('/api/update/:id', function (req, res) {
+  ////////////////////////////////////////////////////////
+  //Api Vote Update
+
+  app.put('/api/updateapi/:id', function (req, res) {
     console.log("connected");
 
     db.apiLists.increment("score", 
@@ -43,7 +50,7 @@ module.exports = function (app) {
 
 
 
-  // Delete an apiLists by id
+  // Delete API by ID
   // app.delete("/api/apiLists/:id", function(req, res) {
   //   db.apiLists.destroy({ where: { id: req.params.id } }).then(function(dbapiLists) {
   //     res.json(dbapiLists);
