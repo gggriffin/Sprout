@@ -73,7 +73,8 @@
         title: $("#atitle").val().trim(),
         body: $("#abody").val().trim(),
         type: $("#atype").val().trim(),
-        link: $("#alink").val().trim()
+        link: $("#alink").val().trim(),
+        score: 1
       };
       $.post("/api/newApi", newProject)
         .done(function (data) {
@@ -83,6 +84,22 @@
       $("#abody").val("");
       $("#alink").val("");
     });
+
+
+
+    $('body').on('click', '.voteBtn', function updateScore() {
+      const id = $(this).attr('apiId');
+
+      $.ajax({ method: "PUT",
+        url: "api/update/" + id,
+        data: id
+      }).then(renderApiTrend());
+ 
+
+  });
+
+
+
     //render api trending database
     function renderApiTrend() {
       $.get("/api/apiLists", getAPIS);
@@ -91,16 +108,16 @@
 
       for (var i = 0; i < data.length; i++) {
         console.log(data[i]);
-       var voteBtn = ("<button style='background-color: #3f3f3f; color: #48ACF0; border: #3f3f3f;'>"+"<i class='fas fa-tint grow-icon'></i>"+ "</button>");
+       var voteBtn = ("<button class='voteBtn' apiId=" + data[i].id + " style='background-color: #3f3f3f; color: #48ACF0; border: #3f3f3f;'>"+"<i class='fas fa-tint grow-icon'></i>"+ "</button>");
         var apiRow = $("<tr>");
         apiRow.append("<td><a>" + data[i].id + "</a></td>");
         apiRow.append("<td><a>" + data[i].title + "</a></td>");
         apiRow.append("<td><a>" + data[i].type + "</a></td>");
         apiRow.append("<td><a>" + data[i].link + "</a></td>");
         apiRow.append("<td><a>" + data[i].body + "</a></td>");
-        apiRow.append("<td><a>" + "1" + "</a></td>");
+        apiRow.append("<td><a>" + data[i].score + "</a></td>");
         apiRow.append("<td><a>" + voteBtn + "</a></td>");
-        
+    
         
         $("#apiTrending").append(apiRow);
       };
@@ -117,7 +134,8 @@
         title: $("#ltitle").val().trim(),
         body: $("#lbody").val().trim(),
         type: $("#ltype").val().trim(),
-        link: $("#llink").val().trim()
+        link: $("#llink").val().trim(),
+        score: 1
       };
       $.post("/api/newLib", newProject)
         .done(function (data) {
@@ -128,6 +146,7 @@
       $("#ltype").val("");
       $("#llink").val("");
     });
+
      //render library trending database
     function renderLib() {
       $.get("/api/libraryLists", getLib);
@@ -136,14 +155,14 @@
 
       for (var i = 0; i < data.length; i++) {
         console.log(data[i]);
-       var voteBtn = ("<button value='1' style='background-color: #3f3f3f; color: #48ACF0; border: #3f3f3f;'>"+"<i class='fas fa-tint grow-icon'></i>"+ "</button>");
+       var voteBtn = ("<button class='voteBtn' libId=" + data[i].id + " style='background-color: #3f3f3f; color: #48ACF0; border: #3f3f3f;'>"+"<i class='fas fa-tint grow-icon'></i>"+ "</button>");
         var apiRow = $("<tr>");
         apiRow.append("<td><a>" + data[i].id + "</a></td>");
         apiRow.append("<td><a>" + data[i].title + "</a></td>");
         apiRow.append("<td><a>" + data[i].type + "</a></td>");
         apiRow.append("<td><a>" + data[i].link + "</a></td>");
         apiRow.append("<td><a>" + data[i].body + "</a></td>");
-        apiRow.append("<td><a>" + "1" + "</a></td>");
+        apiRow.append("<td><a>" + data[i].score + "</a></td>");
         apiRow.append("<td><a>" + voteBtn + "</a></td>");
         
         
@@ -151,8 +170,9 @@
       };
     };
     renderLib();
+    
 
-    // =====================================
+    // Show/Hide appropriate page functionality
     function hideForms() {
       $('.subForm').hide();
     };
@@ -185,10 +205,13 @@
     $('#pbtn').on('click', function () {
       hideForms();
       $('.collabInfo').show();
+      console.log('pbtn clicked')
     })
+
 
     $(document).ready(function () {
       hideForms();
+    //End Show/Hide functionality
     });
   });
 </script>
