@@ -8,7 +8,7 @@ module.exports = function (sequelize, DataTypes) {
       }
     },
     body: {
-      type: DataTypes.STRING(75),
+      type: DataTypes.STRING(150),
       allowNull: false,
       validate: {
         len: [1]
