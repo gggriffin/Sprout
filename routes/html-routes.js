@@ -12,7 +12,7 @@ var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 passport.use(new GoogleStrategy({
     clientID: "1013064070830-6v0qtle33qdbte5grurkvoht2n981rdv.apps.googleusercontent.com",
     clientSecret: "K4mBlQbOkJkVTuHlEHFuSI4U",
-    callbackURL: "https://sprout-heroku.herokuapp.com/auth/google/callback"   //"http://sprout.com:8080/auth/google/callback" //
+    callbackURL:  "https://sprout-heroku.herokuapp.com/auth/google/callback" || "http://sprout.com:8080/auth/google/callback"
   },
   function(accessToken, refreshToken, profile, done) {
     console.log(profile);
@@ -21,10 +21,17 @@ passport.use(new GoogleStrategy({
     var displayName = profile.displayName;
     var photo = profile.photos && profile.photos[0] && profile.photos[0].value;
 
-     
+
+    db.users.findOrCreate({where: {id: id}, defaults: {provider, displayName, photo}})
+    .spread(function(user, created) {
+      if(created) {
+        return done(null, user)
+
+      }
+      return done(null, false, 'User exitsts');
     //db.users.create({id, provider, displayName, photo}, function (err, user) {
-         db.users.findOrCreate({where: {id, provider, displayName, photo}}, function (err, user) {
-         return done(err, user);
+        // db.users.findOrCreate({where: {id, provider, displayName, photo}}, function (err, user) {
+        // return done(err, user);
        });
   }
 ));
@@ -58,7 +65,7 @@ module.exports = function(app) {
 
 
   app.get('/auth/google/callback', 
-  passport.authenticate('google', { failureRedirect: '/login' }),
+  passport.authenticate('google', { failureRedirect: '/' }),
   function(req, res) {
     res.redirect('/');
   });
