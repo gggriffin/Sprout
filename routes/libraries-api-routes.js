@@ -19,7 +19,6 @@ module.exports = function (app) {
       {
         title: req.body.title,
         body: req.body.body,
-        score: req.body.score,
         link: req.body.link,
         type: req.body.type,
         score: req.body.score
