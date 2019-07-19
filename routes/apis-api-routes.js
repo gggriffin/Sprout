@@ -28,7 +28,7 @@ module.exports = function (app) {
     });
   });
 
-  app.put('/api/update/:id'), function (req, res, id) {
+  app.put('/api/update/:id', function (req, res, id) {
     const id = req.params.id;
     console.log('lib id' + id);
     console.log('id = ' + id);
@@ -37,9 +37,9 @@ module.exports = function (app) {
     {
       where: {id: id}
     })
-    .then(res.json(dbapiLists));
+    
 
-  }
+  });
 
 
 
