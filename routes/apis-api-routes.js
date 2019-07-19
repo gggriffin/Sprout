@@ -28,14 +28,12 @@ module.exports = function (app) {
     });
   });
 
-  app.put('/api/update/:id', function (req, res, id) {
-    const id = req.params.id;
-    console.log('lib id' + id);
-    console.log('id = ' + id);
+  app.put('/api/update/:id', function (req, res) {
+    console.log("connected");
 
     db.apiLists.increment("score", 
     {
-      where: {id: id}
+      where: {id: req.params.id}
     })
     
 
