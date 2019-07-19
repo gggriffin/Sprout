@@ -89,11 +89,11 @@
 
     $('body').on('click', '.voteBtn', function updateScore() {
       const id = $(this).attr('apiId');
-
-      $.ajax({ method: "PUT",
+      console.log('clicked')
+      $.ajax({ 
+        method: "PUT",
         url: "api/update/" + id,
-        data: id
-      }).then(renderApiTrend());
+      });
  
 
   });
