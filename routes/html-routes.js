@@ -22,7 +22,7 @@ passport.use(new GoogleStrategy({
     var photo = profile.photos && profile.photos[0] && profile.photos[0].value;
 
 
-    db.users.create({where: {id: id}, defaults: {provider, displayName, photo}})
+    db.users.findOrCreate({where: {id: id}, defaults: {provider, displayName, photo}})
     .spread(function(user, created) {
       if(created) {
         return done(null, user)
