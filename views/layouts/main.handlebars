@@ -29,8 +29,13 @@
     crossorigin="anonymous"></script>
 
 <script>
+
+
   $(document).ready(function () {
-    // submitting new project  
+        
+    ////////////////////////////////////////////////////////
+    // Submitting New Project  
+
     var projectdb;
     $("#pbtn").on("click", function (event) {
       event.preventDefault();
@@ -49,9 +54,11 @@
       $("#pbody").val("");
       $("#pskill").val("");
       $("#plink").val("");
-      //end of project function
     });
-    //render project database
+
+  ////////////////////////////////////////////////////////
+  //Render Project Database
+
     function renderProjects() {
       $.get("/api/projectExamples", getProjectDb);
     }
@@ -64,9 +71,11 @@
       return rows;
     }
     renderProjects();
-    //================================================
 
-    // submitting new API
+
+    ////////////////////////////////////////////////////////
+    // Submitting New API
+
     $("#abtn").on("click", function (event) {
       event.preventDefault();
       var newProject = {
@@ -85,22 +94,34 @@
       $("#alink").val("");
     });
 
+  ////////////////////////////////////////////////////////
+  //API and Library Vote onClick Functions
 
-
-    $('body').on('click', '.voteBtn', function updateScore() {
+    $('body').on('click', '.apiVoteBtn', function updateScore() {
       const id = $(this).attr('apiId');
       console.log('clicked')
       $.ajax({ 
         method: "PUT",
-        url: "api/update/" + id,
+        url: "api/updateapi/" + id,
       });
  
 
   });
 
+  $('body').on('click', '.libVoteBtn', function updateScore() {
+      const id = $(this).attr('libId');
+      console.log('clicked')
+      $.ajax({ 
+        method: "PUT",
+        url: "api/updatelib/" + id,
+      });
+ 
 
+  });
 
-    //render api trending database
+  ////////////////////////////////////////////////////////
+  //Render Api Trending Database
+
     function renderApiTrend() {
       $.get("/api/apiLists", getAPIS);
     }
@@ -108,7 +129,7 @@
 
       for (var i = 0; i < data.length; i++) {
         console.log(data[i]);
-       var voteBtn = ("<button class='voteBtn' apiId=" + data[i].id + " style='background-color: #3f3f3f; color: #48ACF0; border: #3f3f3f;'>"+"<i class='fas fa-tint grow-icon'></i>"+ "</button>");
+       var voteBtn = ("<button class='apiVoteBtn' apiId=" + data[i].id + " style='background-color: #3f3f3f; color: #48ACF0; border: #3f3f3f;'>"+"<i class='fas fa-tint grow-icon'></i>"+ "</button>");
         var apiRow = $("<tr>");
         apiRow.append("<td><a>" + data[i].id + "</a></td>");
         apiRow.append("<td><a>" + data[i].title + "</a></td>");
@@ -125,9 +146,9 @@
     };
     renderApiTrend();
 
-     
-    //================================================
-    // submitting new library
+    ////////////////////////////////////////////////////////
+    // Submitting New Library
+
     $("#lbtn").on("click", function (event) {
       event.preventDefault();
       var newProject = {
@@ -147,7 +168,9 @@
       $("#llink").val("");
     });
 
-     //render library trending database
+    ////////////////////////////////////////////////////////
+    //Render Library Trending Database
+
     function renderLib() {
       $.get("/api/libraryLists", getLib);
     }
@@ -155,7 +178,7 @@
 
       for (var i = 0; i < data.length; i++) {
         console.log(data[i]);
-       var voteBtn = ("<button class='voteBtn' libId=" + data[i].id + " style='background-color: #3f3f3f; color: #48ACF0; border: #3f3f3f;'>"+"<i class='fas fa-tint grow-icon'></i>"+ "</button>");
+       var voteBtn = ("<button class='libVoteBtn' libId=" + data[i].id + " style='background-color: #3f3f3f; color: #48ACF0; border: #3f3f3f;'>"+"<i class='fas fa-tint grow-icon'></i>"+ "</button>");
         var apiRow = $("<tr>");
         apiRow.append("<td><a>" + data[i].id + "</a></td>");
         apiRow.append("<td><a>" + data[i].title + "</a></td>");
@@ -171,8 +194,9 @@
     };
     renderLib();
     
+    ////////////////////////////////////////////////////////
+    // Show/Hide Appropriate Page 
 
-    // Show/Hide appropriate page functionality
     function hideForms() {
       $('.subForm').hide();
     };
@@ -211,8 +235,10 @@
 
     $(document).ready(function () {
       hideForms();
-    //End Show/Hide functionality
     });
+
+    ////////////////////////////////////////////////////////
+
   });
 </script>
 
