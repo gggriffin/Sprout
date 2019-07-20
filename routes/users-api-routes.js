@@ -1,7 +1,9 @@
 var db = require("../models");
 
 module.exports = function (app) {
-  // Get all users list
+
+  ///////////////////////////////////////////////////////  
+  // Get all users 
   app.get("/api/users", function (req, res) {
     db.users.findAll({}).then(function (dbusers) {
       res.json(dbusers);
@@ -9,7 +11,8 @@ module.exports = function (app) {
     });
   });
 
-  // Create a new usersLists
+  ///////////////////////////////////////////////////////
+  // Update a new usersList
   app.post("/api/newUsers", function (req, res) {
     db.users.create(
       {
@@ -17,6 +20,12 @@ module.exports = function (app) {
         provider: req.body.provider,
         displayName: req.body.displayName,
         photo: req.body.photo,
+        userName: req.body.userName,
+        password: req.body.password,
+        apisSubmitted: req.body.apisSubmitted,
+        librariesSubmitted: req.body.librariesSubmitted,
+        projectsSubmitted: req.body.projectsSubmitted,
+        commentHistory: req.body.commentHistory
       }
     )
       .then(function (dbusers) {
