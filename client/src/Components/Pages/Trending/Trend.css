@@ -1,0 +1,70 @@
+.Trend {
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+}
+
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #9381ff;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+#navLinks {
+  justify-content: right;
+}
+
+#navIcon {
+  padding-left: 5px;
+}
+
+#trendCardIcon {
+  font-size: 3em;
+  color: #3AFA62;
+}
+
+#trendCardIcon {
+  font-size: 3em;
+  color: #3AFA62;
+}
+
+#trendMainCard {
+  border: solid 10px #FFFFFF;
+  border-radius: 15px;
+  background-color: #3f3f3f;
+  color: #FFFFFF;
+  text-align: center;
+  margin-bottom: 3rem;
+  margin-top: 3rem;
+}
+
+#trendMainTitle {
+  color: #3AFA62;
+  font-weight: bold;
+}
+
+#trendApiTableCard, #trendLibTableCard {
+  border: solid 10px #3AFA62;
+  border-radius: 15px;
+  background-color: #3f3f3f;
+  color: #FFFFFF;
+  text-align: center;
+  margin-bottom: 3rem;
+  margin-top: 3rem;
+}
+
+#trendApiTitle, #trendLibTitle {
+  color: #FFFFFF;
+  font-weight: bold;
+  padding-bottom: .75em;
+}
+
+th {
+  color: #3AFA62;
+}
+
+td {
+  color: #FFFFFF;
+}

@@ -1,0 +1,64 @@
+.Home {
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  background-color: #9381ff;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+#mainCardIcon {
+  font-size: 3em;
+  color: #3AFA62;
+}
+
+#subCardRow {
+  justify-content: center;
+}
+
+#homeMainCard, #homeSubCard{
+  border: solid 10px #FFFFFF;
+  border-radius: 15px;
+  background-color: #3f3f3f;
+  color: #FFFFFF;
+  text-align: center;
+  margin-bottom: 3rem;
+  margin-top: 3rem;
+}
+
+#homeMainTitle, #homeSubTitle {
+  color: #3AFA62;
+  font-weight: bold;
+}
+
+#subCardI1 {
+  font-size: 3em;
+  color: #E4572E;
+}
+
+#subCardI2 {
+  font-size: 3em;
+  color: #48ACF0;
+}
+
+#subCardI3 {
+  font-size: 3em;
+  color: #FFBE0B;
+}
+
+.hvr-grow {
+  display: inline-block;
+  vertical-align: middle;
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  transition-duration: 0.3s;
+  transition-property: transform;
+}
+
+.hvr-grow:hover,
+.hvr-grow:focus,
+.hvr-grow:active {
+  transform: scale(1.1);
+}

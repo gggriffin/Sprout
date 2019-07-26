@@ -1,0 +1,20 @@
+#cpyRow {
+  background-color: #FFFFFF;
+  text-align: center;
+}
+
+#gsRow {
+  padding-top: 20px
+}
+
+#gitLink {
+  font-size: 3em;
+}
+
+#devLink {
+  font-size: 3em;
+}
+
+.CopyRight {
+  font-size: .75em;
+} 

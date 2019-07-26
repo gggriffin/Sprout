@@ -1,31 +1,77 @@
 {
-  "name": "node-handlebars-boilerplate",
+  "name": "sprout",
   "version": "1.0.0",
-  "description": "Project 2 Starter",
+  "description": "TBD",
+  "author": "TBD",
+  "license": "MIT",
   "main": "server.js",
-  "scripts": {
-    "start": "node server.js",
-    "lint": "eslint **/*.js --quiet",
-    "fix": "eslint --fix .",
-    "test": "npm run lint && NODE_ENV=test mocha -u tdd --reporter spec --exit"
+  "engines": {
+    "node": "10.x"
   },
-  "license": "ISC",
-  "dependencies": {
-    "dotenv": "^6.0.0",
-    "express": "^4.17.1",
-    "express-handlebars": "^3.0.0",
-    "mysql2": "^1.5.3",
-    "passport": "^0.4.0",
-    "passport-google-oauth": "^2.0.0",
-    "sequelize": "^6.0.0"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TBD"
+  },
+  "homepage": "TBD",
+  "scripts": {
+    "start": "if-env NODE_ENV=production && yarn start:prod || yarn start:dev",
+    "start:prod": "node server.js",
+    "start:dev": "yarn kill && concurrently \"nodemon\" \"yarn client\"",
+    "server": "yarn kill && nodemon",
+    "client": "cd client && yarn start",
+    "install": "cd client && yarn install",
+    "build": "cd client && yarn build",
+    "heroku-postbuild": "yarn build",
+    "kill": "kill-port 3001",
+    "lint": "eslint --quiet .",
+    "lint:fix": "eslint --fix .",
+    "tests": "yarn kill && NODE_ENV=test nyc --reporter=html --reporter=text mocha tests/**/*.spec.js --exit",
+    "test:coverage": "nyc report --reporter=text-lcov | coveralls"
+  },
+  "nodemonConfig": {
+    "events": {
+      "restart": "yarn kill",
+      "crash": "yarn kill"
+    },
+    "delay": "3000",
+    "ignore": [
+      "client/*"
+    ]
+  },
+  "nyc": {
+    "exclude": [
+      "client"
+    ]
   },
   "devDependencies": {
-    "chai": "^4.1.2",
-    "chai-http": "^4.0.0",
-    "eslint": "^4.19.1",
-    "eslint-config-prettier": "^2.9.0",
-    "eslint-plugin-prettier": "^2.6.2",
-    "mocha": "^5.2.0",
-    "prettier": "^1.13.7"
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "concurrently": "^4.1.1",
+    "coveralls": "^3.0.5",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.17.3",
+    "kill-port": "^1.5.1",
+    "mocha": "^6.1.4",
+    "mocha-lcov-reporter": "^1.3.0",
+    "nodemon": "^1.19.1",
+    "nyc": "^14.1.1",
+    "sequelize-cli": "^5.5.0",
+    "supertest": "^4.0.2"
+  },
+  "dependencies": {
+    "axios": "^0.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.0.0",
+    "express": "^4.17.1",
+    "express-session": "^1.16.2",
+    "helmet": "^3.20.0",
+    "if-env": "^1.0.4",
+    "mysql2": "^1.6.5",
+    "passport": "^0.4.0",
+    "passport-google-oauth": "^2.0.0",
+    "passport-local": "^1.0.0",
+    "passport-session": "^1.0.2",
+    "sequelize": "^5.8.11"
   }
 }
