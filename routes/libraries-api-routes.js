@@ -1,15 +1,24 @@
 var db = require("../models");
 
 module.exports = function (app) {
-  // Get all library lists
+
+  ////////////////////////////////////////////////////////
+  // Get All Libraries
+
   app.get("/api/libraryLists", function (req, res) {
-    db.libraryLists.findAll({}).then(function (dblibraryLists) {
+    db.libraryLists.findAll({
+      order: [
+        ['score', 'DESC']
+      ]
+    }).then(function (dblibraryLists) {
       res.json(dblibraryLists);
 
     });
   });
 
-  // Create a new libraryLists
+  ////////////////////////////////////////////////////////
+  // Submit New Library
+
   app.post("/api/newLib", function (req, res) {
     db.libraryLists.create(
       {
@@ -17,14 +26,36 @@ module.exports = function (app) {
         body: req.body.body,
         link: req.body.link,
         type: req.body.type,
+        score: req.body.score
       }
     )
       .then(function (dblibraryLists) {
         res.json(dblibraryLists);
-      });
+      })
   });
 
-  // Delete an libraryLists by id
+  ////////////////////////////////////////////////////////
+  //Library Vote Update
+
+  app.put('/api/updatelib/:id', function (req, res) {
+    console.log("connected library");
+
+    db.libraryLists.increment("score", 
+    {
+      where: {id: req.params.id}
+    })
+    
+
+  });
+  
+
+
+
+
+
+
+
+  // Delete Library by ID
   // app.delete("/api/libraryLists/:id", function(req, res) {
   //   db.libraryLists.destroy({ where: { id: req.params.id } }).then(function(dblibraryLists) {
   //     res.json(dblibraryLists);
@@ -32,19 +63,9 @@ module.exports = function (app) {
   // });
 };
 
-// var postEntry = function(req, res) {
-// 	var title = req.body.title,
-// 		content = req.body.content;
-// 	m.models.post.sync()
-// 		.then(function() {
-// 			return 	m.models.post.create({
-// 				postTitle: title,
-// 				postContent: content
-// 			});
-// 		})
-// 		.then(function(data) {
-// 			res.send({
-// 				status: 'OK',
-// 				data: data
-// 			});
-// 		});
+
+
+
+
+  
+
