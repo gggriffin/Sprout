@@ -1,0 +1,52 @@
+.Collab {
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  padding-bottom: 20px;
+}
+
+#collabMainCard {
+  border: solid 10px #FFFFFF;
+  border-radius: 15px;
+  background-color: #3f3f3f;
+  color: #FFFFFF;
+  text-align: center;
+  margin-bottom: 3rem;
+  margin-top: 3rem;
+}
+
+#collabMainTitle {
+  color: #3AFA62;
+  font-weight: bold;
+}
+
+#accordCard {
+  background-color: #3AFA62;
+  border-width: 7px; 
+  border-color: #3f3f3f;
+  color: #3f3f3f;
+  font-family: 'Roboto', sans-serif;
+}
+
+#accordCardHead {
+  border-bottom-color: #3f3f3f;
+}
+
+#accordToggle {
+  color: #3f3f3f;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.form-label {
+  font-family: 'Roboto', sans-serif;
+  color: #3f3f3f;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+#subBttn {
+  background-color: #3f3f3f;
+  color: #FFFFFF;
+  border-color: #3f3f3f;
+}
