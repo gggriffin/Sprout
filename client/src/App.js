@@ -11,7 +11,6 @@ class App extends Component {
   componentWillMount() {
     // Grabs/Parses the query strings attached to the location
     const query = queryString.parse(this.props.location.search);
-
     // Check to see if the `token` query item is present
     if (query.token) {
       // Store the token locally
@@ -20,6 +19,10 @@ class App extends Component {
       // Redirects on successful login
       this.props.history.push("/");
     }
+  }
+
+  componentDidMount() {
+    
   }
 
   render() {

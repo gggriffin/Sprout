@@ -6,7 +6,7 @@
   "license": "MIT",
   "main": "server.js",
   "engines": {
-    "node": "10.x"
+    "node": "11.6.0"
   },
   "repository": {
     "type": "git",
@@ -17,7 +17,7 @@
     "start": "if-env NODE_ENV=production && yarn start:prod || yarn start:dev",
     "start:prod": "node server.js",
     "start:dev": "yarn kill && concurrently \"nodemon\" \"yarn client\"",
-    "server": "yarn kill && nodemon",
+    "server": "yarn kill && nodemon --ignore client",
     "client": "cd client && yarn start",
     "install": "cd client && yarn install",
     "build": "cd client && yarn build",
