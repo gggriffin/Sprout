@@ -6,13 +6,13 @@
   "license": "MIT",
   "main": "server.js",
   "engines": {
-    "node": "11.14.0"
+    "node": "10.x"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/TBD"
   },
-  "homepage": "TBD",
+  "homepage": "localhost:3000",
   "scripts": {
     "start": "if-env NODE_ENV=production && yarn start:prod || yarn start:dev",
     "start:prod": "node server.js",
