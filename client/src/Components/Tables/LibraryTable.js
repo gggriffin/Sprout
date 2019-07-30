@@ -21,7 +21,13 @@ class LibraryTable extends React.Component {
         .then(res =>
           this.setState({ libraryLists: res.data }))
           .catch(err => console.log(err))
-      }
+      };
+
+      libraryVote = id => {
+        API.voteLibrary(id)
+          .then(res => this.loadLibraries())
+          .catch(err => console.log(err));
+      };
 
 
     render() {
@@ -33,7 +39,7 @@ class LibraryTable extends React.Component {
                     <td>{library.body}</td>
                     <td>{library.score}</td>
                     <td>
-                        <button className={library.id}>Grow</button>
+                        <button onClick={() => this.libraryVote(library.id)}>Grow</button>
                     </td>
                 </tr>)
       

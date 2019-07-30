@@ -23,6 +23,12 @@ class ApiTable extends React.Component {
           .catch(err => console.log(err))
       }
 
+      apiVote = id => {
+        API.voteApi(id)
+        .then(res => this.loadApis())
+        .catch(err => console.log(err));
+      }
+
     render() {
         return this.state.apiLists.map(api =>
                 <tr key={api._id}>
@@ -32,7 +38,7 @@ class ApiTable extends React.Component {
                     <td>{api.body}</td>
                     <td>{api.score}</td>
                     <td>
-                        <button className={api.id}>Grow</button>
+                        <button onClick={() => this.apiVote(api.id)}>Grow</button>
                     </td>
                 </tr>)
       
