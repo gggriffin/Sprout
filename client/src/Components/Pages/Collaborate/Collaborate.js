@@ -133,7 +133,7 @@ class Collaborate extends Component {
                       placeholder="What does this library do?" />
                     </Form.Group>
 
-                    <Button 
+                    <Button
                     as="input" 
                     type="submit" 
                     value="Submit" 
