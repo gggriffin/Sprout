@@ -36,7 +36,6 @@ render() {
                 <Table>
                   <thead id="apiTHead">
                     <tr>
-                      <th>#</th>
                       <th>Title</th>
                       <th>Type</th>
                       <th>Source</th>
@@ -61,7 +60,6 @@ render() {
                 <Table>
                   <thead>
                     <tr>
-                      <th>#</th>
                       <th>Title</th>
                       <th>Type</th>
                       <th>Source</th>

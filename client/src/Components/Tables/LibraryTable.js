@@ -9,7 +9,6 @@ class LibraryTable extends React.Component {
         super();
         this.state = {
           libraryLists: [],
-          apiLists: []
         };
       }
       
@@ -22,17 +21,26 @@ class LibraryTable extends React.Component {
         .then(res =>
           this.setState({ libraryLists: res.data }))
           .catch(err => console.log(err))
-      }
+      };
+
+      libraryVote = id => {
+        API.voteLibrary(id)
+          .then(res => this.loadLibraries())
+          .catch(err => console.log(err));
+      };
+
 
     render() {
         return this.state.libraryLists.map(library =>
                 <tr key={library._id}>
-                    <td>{library.id}</td>
                     <td>{library.title}</td>
                     <td>{library.type}</td>
                     <td>{library.link}</td>
                     <td>{library.body}</td>
                     <td>{library.score}</td>
+                    <td>
+                        <button onClick={() => this.libraryVote(library.id)}>Grow</button>
+                    </td>
                 </tr>)
       
     }

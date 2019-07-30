@@ -14,7 +14,7 @@ const create = async (req, res) => {
     const item = await db.apiLists.create(req.body);
     res.json(item);
   } catch (error) {
-    res.status(500).send(error);
+    res.status(500).send('error: ' + error);
   }
 };
 
