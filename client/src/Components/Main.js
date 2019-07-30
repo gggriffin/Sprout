@@ -10,7 +10,6 @@ function Main() {
     <Switch>
       <Route exact path='/' component={Home}></Route>
       <Route exact path='/home' component={Home}></Route>
-      {/*       <Route exact path='/signup' component={SignUp}></Route>*/}
       <Route exact path='/trending' component={Trending}></Route>
       <Route exact path='/collaborate' component={Collaborate}></Route>
       <Route exact path='/projects' component={Projects}></Route>
