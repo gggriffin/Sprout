@@ -32,6 +32,9 @@ class ApiTable extends React.Component {
                     <td>{api.link}</td>
                     <td>{api.body}</td>
                     <td>{api.score}</td>
+                    <td>
+                        <button className={api.id}>Grow</button>
+                    </td>
                 </tr>)
       
     }

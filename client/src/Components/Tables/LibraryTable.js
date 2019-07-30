@@ -9,7 +9,6 @@ class LibraryTable extends React.Component {
         super();
         this.state = {
           libraryLists: [],
-          apiLists: []
         };
       }
       
@@ -24,6 +23,7 @@ class LibraryTable extends React.Component {
           .catch(err => console.log(err))
       }
 
+
     render() {
         return this.state.libraryLists.map(library =>
                 <tr key={library._id}>
@@ -33,6 +33,9 @@ class LibraryTable extends React.Component {
                     <td>{library.link}</td>
                     <td>{library.body}</td>
                     <td>{library.score}</td>
+                    <td>
+                        <button className={library.id}>Grow</button>
+                    </td>
                 </tr>)
       
     }
