@@ -5,4 +5,7 @@ export default {
   getLibraries: function() {
     return axios.get("/api/v1/libraries");
   },
+  getApis: function() {
+    return axios.get('/api/v1/apis')
+  }
 };

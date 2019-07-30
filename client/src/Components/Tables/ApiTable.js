@@ -17,7 +17,7 @@ class ApiTable extends React.Component {
       }
     
       loadApis = () => {
-        API.getLibraries()
+        API.getApis()
         .then(res =>
           this.setState({ apiLists: res.data }))
           .catch(err => console.log(err))
