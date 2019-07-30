@@ -38,7 +38,7 @@ class ApiTable extends React.Component {
                     <td>{api.body}</td>
                     <td>{api.score}</td>
                     <td>
-                        <button onClick={() => this.apiVote(api.id)}>Grow</button>
+                        <button className="fas fa-tint" onClick={() => this.apiVote(api.id)}></button>
                     </td>
                 </tr>)
       
