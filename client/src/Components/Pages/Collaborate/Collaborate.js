@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
@@ -6,11 +6,59 @@ import Accordion from 'react-bootstrap/Accordion';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import './Collaborate.css';
+import API from '../../Utils/API';
 
-function Collaborate() {
+class Collaborate extends Component {
+  state = {
+    title: "",
+    body: "",
+    link: "",
+    type: "",
+    score: 1
+  }
+
+
+  handleInputChange = event => {
+    const {name, value} = event.target;
+    this.setState({
+      [name]: value
+    });
+  };
+
+  handleApiSubmit = event => {
+    event.preventDefault();
+    if (this.state.title && this.state.body && this.state.link && this.state.type ) {
+      API.addApi({
+        title: this.state.title,
+        body: this.state.body,
+        link: this.state.link,
+        type: this.state.type,
+        score: this.state.score
+      })
+      .catch(err => console.log('submit error: ' + err));
+    }
+  }
+
+  handleLibrarySubmit = event => {
+    event.preventDefault();
+    if (this.state.title && this.state.body && this.state.link && this.state.type ) {
+      API.addLibrary({
+        title: this.state.title,
+        body: this.state.body,
+        link: this.state.link,
+        type: this.state.type,
+        score: this.state.score
+      })
+      .catch(err => console.log('submit error: ' + err));
+    }
+  }
+
+
+  render() {
   return (
     <div className="Collab">
       <Row>
+        {this.state.score}
         <Col md={{ span: 8, offset: 2 }}>
           <Card id="collabMainCard">
             <Card.Body>
@@ -37,34 +85,63 @@ function Collaborate() {
               <Accordion.Collapse eventKey="0">
                 <Card.Body>
                   <Form>
+
                     <Form.Group controlId="libForm.ControlInput1">
                       <Form.Label>Title</Form.Label>
-                      <Form.Control placeholder="What's the name of the library?" />
+                      <Form.Control 
+                      value={this.state.title}
+                      onChange={this.handleInputChange}
+                      name="title"
+                      placeholder="What's the name of the library?" />
                     </Form.Group>
+
                     <Form.Group controlId="libForm.ControlSelect1">
                       <Form.Label>Type</Form.Label>
-                      <Form.Control as="select">
-                        <option>HTML</option>
-                        <option>CSS</option>
-                        <option>Javascript</option>
-                        <option>Python</option>
-                        <option>Ruby</option>
-                        <option>Java</option>
-                        <option>MySQL</option>
-                        <option>C++</option>
-                        <option>Other</option>
+                      <Form.Control 
+                      as="select"
+                      value={this.state.type}
+                      onChange={this.handleInputChange}
+                      name="type">
+                      <option></option>
+                      <option>HTML</option>
+                      <option>CSS</option>
+                      <option>Javascript</option>
+                      <option>Python</option>
+                      <option>Ruby</option>
+                      <option>C#</option>
+                      <option>C++</option>
                       </Form.Control>
                     </Form.Group>
+
                     <Form.Group controlId="libForm.ControlLink1">
                       <Form.Label>Source</Form.Label>
-                      <Form.Control as="link" placeholder="Link to repository/documentation" />
+                      <Form.Control 
+                      value={this.state.link}
+                      onChange={this.handleInputChange}
+                      name="link" 
+                      placeholder="Link to repository/documentation" />
                     </Form.Group>
+                    
                     <Form.Group controlId="libForm.ControlTextarea1">
                       <Form.Label>Description</Form.Label>
-                      <Form.Control as="textarea" rows="3" placeholder="What does this library do?" />
+                      <Form.Control 
+                      as="textarea" 
+                      rows="3" 
+                      value={this.state.body}
+                      onChange={this.handleInputChange}
+                      name="body"
+                      placeholder="What does this library do?" />
                     </Form.Group>
-                    <Button as="input" type="submit" value="Submit" id="subBttn"></Button>
+
+                    <Button
+                    as="input" 
+                    type="submit" 
+                    value="Submit" 
+                    id="subBttn"
+                    disabled={!(this.state.title && this.state.body && this.state.link && this.state.type)}
+                    onClick={this.handleLibrarySubmit}></Button>
                   </Form>
+
                 </Card.Body>
               </Accordion.Collapse>
             </Card>
@@ -77,24 +154,54 @@ function Collaborate() {
               <Accordion.Collapse eventKey="1">
                 <Card.Body>
                   <Form>
+
                     <Form.Group controlId="apiForm.ControlInput1">
                       <Form.Label>Title</Form.Label>
-                      <Form.Control placeholder="What's the name of the API?" />
+                      <Form.Control 
+                      value={this.state.title}
+                      onChange={this.handleInputChange}
+                      name="title"
+                      placeholder="What's the name of the API?" />
                     </Form.Group>
+
                     <Form.Group controlId="apiForm.ControlInput2">
                       <Form.Label>Type</Form.Label>
-                      <Form.Control placeholder="What type of API is this? (weather, time, etc.)" />
+                      <Form.Control 
+                      value={this.state.type}
+                      onChange={this.handleInputChange}
+                      name="type"
+                      placeholder="What type of API is this? (weather, time, etc.)" />
                     </Form.Group>
+
                     <Form.Group controlId="apiForm.ControlLink1">
                       <Form.Label>Source</Form.Label>
-                      <Form.Control as="link" placeholder="Link to API/documentation" />
+                      <Form.Control 
+                      value={this.state.link}
+                      onChange={this.handleInputChange}
+                      name="link"
+                      placeholder="Link to API/documentation" />
                     </Form.Group>
+
                     <Form.Group controlId="apiForm.ControlTextarea1">
                       <Form.Label>Description</Form.Label>
-                      <Form.Control as="textarea" rows="3" placeholder="What does this API do?" />
+                      <Form.Control 
+                      as="textarea" 
+                      rows="3" 
+                      value={this.state.body}
+                      onChange={this.handleInputChange}
+                      name="body"
+                      placeholder="What does this API do?" />
                     </Form.Group>
-                    <Button as="input" type="submit" value="Submit" id="subBttn"></Button>
+
+                    <Button 
+                    as="input" 
+                    type="submit" 
+                    value="Submit" 
+                    id="subBttn"
+                    disabled={!(this.state.title && this.state.body && this.state.link && this.state.type)}
+                    onClick={this.handleApiSubmit}></Button>
                   </Form>
+
                 </Card.Body>
               </Accordion.Collapse>
             </Card>
@@ -133,6 +240,7 @@ function Collaborate() {
       </Row>
     </div>
   );
+}
 }
 
 export default Collaborate;

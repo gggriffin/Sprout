@@ -3,9 +3,13 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
 import Table from 'react-bootstrap/Table';
+import LibraryTable from '../../Tables/LibraryTable'
+import ApiTable from '../../Tables/ApiTable'
 import './Trend.css';
+export default class Trending extends React.Component {
+  
 
-function Trend() {
+render() {
   return (
     <div className="Trend">
       <div className="Trend-body">
@@ -32,7 +36,6 @@ function Trend() {
                 <Table>
                   <thead id="apiTHead">
                     <tr>
-                      <th>#</th>
                       <th>Title</th>
                       <th>Type</th>
                       <th>Source</th>
@@ -42,22 +45,13 @@ function Trend() {
                     </tr>
                   </thead>
                   <tbody id="apiTBody">
-                    <tr>
-                      <td>1</td>
-                      <td>Example</td>
-                      <td>Test</td>
-                      <td>Jason</td>
-                      <td>This is a Test</td>
-                      <td>11</td>
-                      <td>|Grow Icon|</td>
-                    </tr>
+                    <ApiTable />
                   </tbody>
                 </Table>
               </Card.Body>
             </Card>
           </Col>
         </Row>
-
         <Row>
           <Col md={{ span: 10, offset: 1 }}>
             <Card id="trendLibTableCard">
@@ -66,7 +60,6 @@ function Trend() {
                 <Table>
                   <thead>
                     <tr>
-                      <th>#</th>
                       <th>Title</th>
                       <th>Type</th>
                       <th>Source</th>
@@ -76,15 +69,7 @@ function Trend() {
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <td>1</td>
-                      <td>Example</td>
-                      <td>Test</td>
-                      <td>Jason</td>
-                      <td>This is a Test</td>
-                      <td>11</td>
-                      <td>|Grow Icon|</td>
-                    </tr>
+                  <LibraryTable />
                   </tbody>
                 </Table>
               </Card.Body>
@@ -96,5 +81,4 @@ function Trend() {
   );
 }
 
-
-export default Trend;
+}
