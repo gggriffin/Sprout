@@ -1,0 +1,116 @@
+#pageContainer {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  margin-left: 0;
+  margin-right: 0;
+  max-width: 100%;
+}
+
+#col1, #col3 {
+  justify-content: center;
+}
+
+#col1 {
+  padding-right: 0;
+
+}
+#col3 {
+  padding-left: 0;
+}
+
+#rightContainer {
+  max-width: 100%;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#middleContainer {
+  max-width: 100%;
+}
+
+.midCrdCol {
+  justify-content: center;
+  margin-bottom: 3%;
+}
+
+#scoreRow {
+  justify-content: center;
+  font-size: 75px;
+  max-width: 100%;
+  margin: 0;
+}
+
+#scoreIcon {
+  line-height: inherit;
+}
+
+#scoreIcon, #userSproutScore {
+  color: turquoise;
+}
+
+#badgeCardRow {
+  justify-content: center;
+  margin: 0;
+}
+
+#badgeCardCol {
+  max-width: 100%;
+  padding: 0;
+}
+
+#badgeCard {
+  max-width: 100%;
+}
+
+#badgeContainer {
+  padding-left: 1px;
+  padding-right: 1px;
+  justify-content: center;
+}
+
+#badgeTitle, #badgeBody {
+  max-width: 100%;
+}
+
+#badgeBody {
+  justify-content: center;
+  font-size: x-large;
+  padding: 0;
+}
+
+.badgeRow {
+  max-width: 100%;
+  margin: 0;
+  justify-content: center;
+}
+
+#badgeCard, #userInfoCard, .midCrd {
+  border-color: #3f3f3f;
+  border-width: 5px;
+}
+
+.crd {
+  color: blanchedalmond;
+  background-color: #3f3f3f;
+  border-width: 2.5px;
+  border-color: #3AFA62;
+}
+
+.indvBadge {
+  text-align: center;
+}
+
+#badge {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+#recentText {
+  margin: 0;
+}
+
+.linkList {
+  padding: 0;
+  margin: 0;
+}
+
