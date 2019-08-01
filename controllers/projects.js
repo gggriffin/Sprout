@@ -10,7 +10,7 @@ const db = require('../models');
 * */
 const create = async (req, res) => {
   try {
-    const item = await db.libraryLists.create(req.body);
+    const item = await db.projectExamples.create(req.body);
     res.json(item);
   } catch (error) {
     res.status(500).send(error);
@@ -19,7 +19,7 @@ const create = async (req, res) => {
 
 const findAll = async (req, res) => {
   try {
-    const list = await db.libraryLists.findAll({});
+    const list = await db.projectExamples.findAll({});
     res.json(list);
   } catch (error) {
     res.status(500).send(error);
