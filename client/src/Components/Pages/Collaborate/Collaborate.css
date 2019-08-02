@@ -20,10 +20,10 @@
 }
 
 #accordCard {
-  background-color: #3AFA62;
+  background-color: black;
   border-width: 7px; 
-  border-color: #3f3f3f;
-  color: #3f3f3f;
+  border-color: #3AFA62;
+  color: antiquewhite;
   font-family: 'Roboto', sans-serif;
 }
 
@@ -32,7 +32,7 @@
 }
 
 #accordToggle {
-  color: #3f3f3f;
+  color: antiquewhite;
   font-family: 'Roboto', sans-serif;
   font-size: 20px;
   font-weight: bold;

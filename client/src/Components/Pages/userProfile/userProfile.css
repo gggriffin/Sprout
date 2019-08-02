@@ -1,1 +1,175 @@
-/* userProfile styling here */
+#pageContainer {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  margin-left: 0;
+  margin-right: 0;
+  max-width: 100%;
+}
+
+#col1, #col3 {
+  justify-content: center;
+}
+
+#col1 {
+  padding-right: 0;
+
+}
+#col3 {
+  padding-left: 0;
+}
+
+#rightContainer {
+  max-width: 100%;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#middleContainer {
+  max-width: 100%;
+}
+
+.midCrdCol {
+  justify-content: center;
+  margin-bottom: 3%;
+}
+
+#scoreRow {
+  justify-content: center;
+  font-size: 75px;
+  max-width: 100%;
+  margin: 0;
+}
+
+#scoreIcon {
+  line-height: inherit;
+}
+
+#scoreIcon, #userSproutScore {
+  color: #3f3f3f;
+}
+
+#badgeCardRow {
+  justify-content: center;
+  margin: 0;
+}
+
+#badgeCardCol {
+  max-width: 100%;
+  padding: 0;
+}
+
+#badgeCard {
+  max-width: 100%;
+}
+
+#badgeContainer {
+  padding-left: 1px;
+  padding-right: 1px;
+  justify-content: center;
+}
+
+#badgeTitle, #badgeBody {
+  max-width: 100%;
+}
+
+#badgeBody {
+  justify-content: center;
+  font-size: x-large;
+  padding: 0;
+}
+
+.badgeRow {
+  max-width: 100%;
+  margin: 0;
+  justify-content: center;
+}
+
+#badgeCard, #userInfoCard, .midCrd {
+  border-color: #3f3f3f;
+  border-width: 5px;
+}
+
+.crd {
+  color: blanchedalmond;
+  background-color: #3f3f3f;
+  border-width: 2.5px;
+}
+
+.indvBadge {
+  text-align: center;
+}
+
+#badge {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+#recentText {
+  margin: 0;
+}
+
+.linkList {
+  padding: 0;
+  margin: 0;
+}
+
+#gitLnk, #liLnk, #folioLnk {
+  color: #0DBF3F;
+}
+
+.midCrd {
+  background-color: #3AFA62;
+}
+
+/* Icon Fade */
+.hvr-icon-fade {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+.hvr-icon-fade .hvr-icon {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+  -webkit-transition-property: color;
+  transition-property: color;
+}
+.hvr-icon-fade:hover .hvr-icon, .hvr-icon-fade:focus .hvr-icon, .hvr-icon-fade:active .hvr-icon {
+  color: #3AFA62;
+}
+
+.hvr-skew-forward {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transform-origin: 0 100%;
+  transform-origin: 0 100%;
+  color: #3AFA62;
+}
+
+/* Grow */
+.hvr-grow {
+  display: inline-block;
+  vertical-align: middle;
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  transition-duration: 0.3s;
+  transition-property: transform;
+}
+
+.hvr-grow:hover,
+.hvr-grow:focus,
+.hvr-grow:active {
+  transform: scale(1.1);
+}
