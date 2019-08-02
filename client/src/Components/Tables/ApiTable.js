@@ -1,5 +1,6 @@
 import React from 'react'
 import API from '../Utils/API'
+import './Tables.css'
 
 
 
@@ -38,7 +39,7 @@ class ApiTable extends React.Component {
                     <td>{api.body}</td>
                     <td>{api.score}</td>
                     <td>
-                        <button className="fas fa-tint" onClick={() => this.apiVote(api.id)}></button>
+                        <button className="fas fa-tint grow-icon" onClick={() => this.apiVote(api.id)}></button>
                     </td>
                 </tr>)
       

@@ -39,7 +39,7 @@ class LibraryTable extends React.Component {
                     <td>{library.body}</td>
                     <td>{library.score}</td>
                     <td>
-                        <button className="fas fa-tint"onClick={() => this.libraryVote(library.id)}></button>
+                        <button className="fas fa-tint grow-icon"onClick={() => this.libraryVote(library.id)}></button>
                     </td>
                 </tr>)
       
