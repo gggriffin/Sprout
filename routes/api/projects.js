@@ -1,7 +1,7 @@
 const router = require('express').Router();
-const projectsController = require('../../controllers/projects');
+const projectController = require('../../controllers/projects');
 
 router.route('/')
-    .post(projectsController.create);
+  .post(projectController.create);
 
 module.exports = router;

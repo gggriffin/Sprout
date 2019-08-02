@@ -16,7 +16,7 @@ class Collaborate extends Component {
     type: "",
     score: 1,
     skills: "",
-    tags: "",
+    tags: 1
   }
 
 
@@ -65,7 +65,7 @@ class Collaborate extends Component {
         link: this.state.link,
         tags: this.state.tags
       })
-      .catch(err => console.log('submit error:' + err))
+      .catch(err => console.log('submit error: ' + err))
     }
   }
 

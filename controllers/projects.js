@@ -13,7 +13,7 @@ const create = async (req, res) => {
     const item = await db.projectExamples.create(req.body);
     res.json(item);
   } catch (error) {
-    res.status(500).send(error);
+    res.status(500).send('Create error: ' + error);
   }
 };
 

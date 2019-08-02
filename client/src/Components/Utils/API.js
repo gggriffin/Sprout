@@ -25,7 +25,7 @@ export default {
   
 
   addProject: function(projectData) {
-    return axios.post('/api/v1/projects/', projectData)
+    return axios.post('api/v1/projects', projectData);
   }
   
 
