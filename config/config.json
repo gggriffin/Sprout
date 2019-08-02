@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "",
+    "password": "Yellow13",
     "database": "sprout_db",
     "host": "localhost",
     "dialect": "mysql"

@@ -5,7 +5,6 @@ import Trending from './Pages/Trending/Trend';
 import Collaborate from './Pages/Collaborate/Collaborate';
 import Projects from './Pages/Projects/Projects';
 import userProfile from './Pages/userProfile/userProfile';
-
 function Main() {
   return (
     <Switch>

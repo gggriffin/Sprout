@@ -7,6 +7,7 @@ import Copyright from './Components/Copyright/Copyright';
 
 class App extends Component {
 
+  
   // This will run before anything renders on the screen
   componentWillMount() {
     // Grabs/Parses the query strings attached to the location
@@ -19,10 +20,6 @@ class App extends Component {
       // Redirects on successful login
       this.props.history.push("/");
     }
-  }
-
-  componentDidMount() {
-    
   }
 
   render() {
