@@ -21,6 +21,11 @@ export default {
   },
   voteLibrary: function(id) {
     return axios.put('/api/v1/libraries/score/' + id);
+  },
+  
+
+  addProject: function(projectData) {
+    return axios.post('api/v1/projects', projectData);
   }
   
 
