@@ -22,18 +22,26 @@ function Profile() {
                   <h2>Sprout</h2>
                   <h2>Man</h2>
                 </Card.Title>
-                <Card.Link id="gitLnk" href="#">
-                  <i className="fab fa-github" />
-                  My Github
-                </Card.Link>
-                <Card.Link id="liLnk" href="#">
-                  <i className="fab fa-linkedin" />
-                  My LinkedIn
-                </Card.Link>
-                <Card.Link id="folioLnk" href="#">
-                  <i className="fas fa-folder-open" />
-                  My Portfolio
-                </Card.Link>
+                <Container>
+                  <Row>
+                    <Card.Link className="hvr-grow hvr-icon-fade" id="gitLnk" href="#">
+                      <i className="fab fa-github hvr-icon" aria-hidden="true" />
+                      My Github
+                    </Card.Link>
+                  </Row>
+                  <Row>
+                    <Card.Link className="hvr-grow hvr-icon-fade" id="liLnk" href="#">
+                      <i className="fab fa-linkedin hvr-icon" aria-hidden="true" />
+                      My LinkedIn
+                    </Card.Link>
+                  </Row>
+                  <Row>
+                    <Card.Link className="hvr-grow hvr-icon-fade" id="folioLnk" href="#">
+                      <i className="fas fa-folder-open hvr-icon" aria-hidden="true" />
+                      My Portfolio
+                    </Card.Link>
+                  </Row>
+                </Container>
               </Card.Body>
             </Card>
           </Col>
