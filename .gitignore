@@ -95,3 +95,5 @@ typings/
 
 # JShint - TIM
 .jshintrc
+
+.package.json/node

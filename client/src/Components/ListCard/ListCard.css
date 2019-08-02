@@ -1,0 +1,28 @@
+.crd {
+  max-height: fit-content;
+  margin-bottom: 1%;
+}
+
+.crdBod {
+  padding: 5px;
+}
+
+.crdTtl, .crdTxt {
+  margin-bottom: .5rem;
+}
+
+.crdTtl {
+  font-size: small;
+}
+
+.crdTxt, .crdLnk {
+  font-size: smaller;
+}
+
+.crdLnk {
+  color: #3AFA62;
+}
+
+#lnkIcn {
+  margin-right: 2px;
+}

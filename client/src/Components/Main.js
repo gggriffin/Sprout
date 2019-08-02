@@ -4,7 +4,7 @@ import Home from './Pages/Home/Home';
 import Trending from './Pages/Trending/Trend';
 import Collaborate from './Pages/Collaborate/Collaborate';
 import Projects from './Pages/Projects/Projects';
-
+import userProfile from './Pages/userProfile/userProfile';
 function Main() {
   return (
     <Switch>
@@ -13,6 +13,7 @@ function Main() {
       <Route exact path='/trending' component={Trending}></Route>
       <Route exact path='/collaborate' component={Collaborate}></Route>
       <Route exact path='/projects' component={Projects}></Route>
+      <Route exact path='/userProfile' component={userProfile}></Route>
     </Switch>
   );
 }
