@@ -3,9 +3,3 @@
 /tests
 /migrations
 /seeders
-
-/server.js
-
-/routes
-/models
-/tests/travis.sql
