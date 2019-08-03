@@ -51,7 +51,7 @@ function userProfile() {
               <Row className="rowTop">
                 <Col className="midCrdCol">
                   <Card className="midCrd">
-                    <Card.Body className="midCrdBd">
+                    <Card.Body className="midCrdBd portfolioCard">
                       <Card.Title><h3>Submitted Libraries/APIs</h3></Card.Title>
                       <Card.Text>
                         <ListCard></ListCard>
@@ -63,7 +63,7 @@ function userProfile() {
 
                 <Col className="midCrdCol">
                   <Card className="midCrd">
-                    <Card.Body className="midCrdBd">
+                    <Card.Body className="midCrdBd portfolioCard">
                       <Card.Title><h3>Previous Comments</h3></Card.Title>
                       <Card.Text>
                         <ListCard></ListCard>
@@ -77,7 +77,7 @@ function userProfile() {
               <Row className="rowBot">
                 <Col className="midCrdCol">
                   <Card className="midCrd">
-                    <Card.Body className="midCrdBd">
+                    <Card.Body className="midCrdBd portfolioCard">
                       <Card.Title><h3>Saved Technologies</h3></Card.Title>
                       <Card.Text>
                         <ListCard></ListCard>
@@ -89,7 +89,7 @@ function userProfile() {
 
                 <Col className="midCrdCol">
                   <Card className="midCrd">
-                    <Card.Body className="midCrdBd">
+                    <Card.Body className="midCrdBd portfolioCard">
                       <Card.Title><h3>Followed Users</h3></Card.Title>
                       <Card.Text>
                         <ListCard></ListCard>
@@ -128,25 +128,25 @@ function userProfile() {
                                 </Popover>
                               }
                             >
-                              <i className="fas fa-arrow-alt-circle-down" id="badge" />
+                              <i className="fas fa-arrow-alt-circle-down badge-down" id="badge" />
                             </OverlayTrigger>
                           </Col>
                           <Col className="indvBadge">
                             <i className="far fa-address-card" id="badge"></i>
                           </Col>
                           <Col className="indvBadge">
-                            <i className="fas fa-arrow-alt-circle-up" id="badge"></i>
+                            <i className="fas fa-arrow-alt-circle-up badge-up" id="badge"></i>
                           </Col>
                         </Row>
                         <Row className="badgeRow">
                           <Col className="indvBadge">
-                            <i className="fab fa-apple" id="badge"></i>
+                            <i className="fab fa-apple badge-apple" id="badge"></i>
                           </Col>
                           <Col className="indvBadge">
-                            <i className="fas fa-archive" id="badge"></i>
+                            <i className="fas fa-archive badge-archive" id="badge"></i>
                           </Col>
                           <Col className="indvBadge">
-                            <i className="fas fa-birthday-cake" id="badge"></i>
+                            <i className="fas fa-birthday-cake badge-cake" id="badge"></i>
                           </Col>
                         </Row>
                       </Container>
