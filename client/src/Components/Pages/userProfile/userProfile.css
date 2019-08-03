@@ -38,14 +38,19 @@
   font-size: 75px;
   max-width: 100%;
   margin: 0;
+  margin-bottom: 1em;
+  background-color: #3f3f3f;
+  border: 5px solid #FFFFFF;
 }
 
 #scoreIcon {
   line-height: inherit;
+  text-shadow: #3f3f3f 1px 1px;
 }
 
 #scoreIcon, #userSproutScore {
   color: #48acf0;
+  text-shadow: #3f3f3f 1px 1px;
 }
 
 #badgeCardRow {
@@ -95,6 +100,10 @@
   border-width: 2.5px;
 }
 
+.crdBod {
+  border: 1px solid #FFFFFF;
+}
+
 .indvBadge {
   text-align: center;
 }
@@ -118,7 +127,29 @@
 }
 
 .midCrd {
-  background-color: #3AFA62;
+  background-color: #3f3f3f;
+  color: #3AFA62;
+  border: 5px solid #FFFFFF;
+}
+
+.badge-archive {
+  color: #F28123;
+}
+
+.badge-up {
+ color: #3DFAFF;
+}
+
+.badge-down {
+  color: #3626A7;
+}
+
+.badge-cake {
+  color: #EEC643;
+}
+
+.badge-apple {
+  color: #FF595E;
 }
 
 /* Icon Fade */
