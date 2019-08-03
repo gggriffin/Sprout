@@ -18,7 +18,7 @@ class App extends Component {
       window.localStorage.setItem("jwt", query.token);
 
       // Redirects on successful login
-      this.props.history.push("/");
+      this.props.history.push("/userProfile");
     }
   }
 
