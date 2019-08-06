@@ -132,7 +132,7 @@ function userProfile() {
                             </OverlayTrigger>
                           </Col>
                           <Col className="indvBadge">
-                            <i className="far fa-address-card" id="badge"></i>
+                            <i className="far fa-address-card badge-address" id="badge"></i>
                           </Col>
                           <Col className="indvBadge">
                             <i className="fas fa-arrow-alt-circle-up badge-up" id="badge"></i>
