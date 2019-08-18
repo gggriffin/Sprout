@@ -14,7 +14,9 @@ class Collaborate extends Component {
     body: "",
     link: "",
     type: "",
-    score: 1
+    score: 1,
+    skills: "",
+    tags: 1
   }
 
 
@@ -49,7 +51,21 @@ class Collaborate extends Component {
         type: this.state.type,
         score: this.state.score
       })
-      .catch(err => console.log('submit error: ' + err));
+      .catch(err => console.log(err));
+    }
+  }
+
+  handleProjectSubmit = event => {
+    event.preventDefault();
+    if(this.state.title && this.state.body && this.state.skills && this.state.link) {
+      API.addProject({
+        title: this.state.title,
+        body: this.state.body,
+        skills: this.state.skills,
+        link: this.state.link,
+        tags: this.state.tags
+      })
+      .catch(err => console.log('submit error: ' + err))
     }
   }
 
@@ -214,23 +230,54 @@ class Collaborate extends Component {
               <Accordion.Collapse eventKey="2">
                 <Card.Body>
                   <Form>
+
                     <Form.Group controlId="projForm.ControlInput1">
                       <Form.Label>Title</Form.Label>
-                      <Form.Control placeholder="What's the name of the project?" />
+                      <Form.Control 
+                      value={this.state.title}
+                      onChange={this.handleInputChange}
+                      name="title"
+                      placeholder="What's the name of the project?" />
                     </Form.Group>
+
                     <Form.Group controlId="projForm.ControlLink1">
                       <Form.Label>Source</Form.Label>
-                      <Form.Control as="link" placeholder="Link to project source/documentation" />
+                      <Form.Control
+                       value={this.state.link}
+                       onChange={this.handleInputChange}
+                       name="link"
+                       placeholder="Link to project source/documentation" />
                     </Form.Group>
+
                     <Form.Group controlId="projForm.ControlTextarea1">
                       <Form.Label>Description</Form.Label>
-                      <Form.Control as="textarea" rows="3" placeholder="What does this project do?" />
+                      <Form.Control
+                      value={this.state.body}
+                      onChange={this.handleInputChange}
+                      name="body"
+                       as="textarea"
+                      rows="3"
+                      placeholder="What does this project do?" />
                     </Form.Group>
+
                     <Form.Group controlId="projForm.ControlTextarea2">
                       <Form.Label>Skills</Form.Label>
-                      <Form.Control as="textarea" rows="3" placeholder="What skills are demonstraited, and which technologies are used?" />
+                      <Form.Control
+                      value={this.state.skills}
+                      onChange={this.handleInputChange}
+                      name="skills" 
+                      as="textarea" 
+                      rows="3" 
+                      placeholder="What skills are demonstraited, and which technologies are used?" />
                     </Form.Group>
-                    <Button as="input" type="submit" value="Submit" id="subBttn"></Button>
+
+                    <Button 
+                    disabled={!(this.state.title && this.state.body && this.state.link && this.state.skills)}
+                    onClick={this.handleProjectSubmit}
+                    as="input" 
+                    type="submit" 
+                    value="Submit" 
+                    id="subBttn"></Button>
                   </Form>
                 </Card.Body>
               </Accordion.Collapse>

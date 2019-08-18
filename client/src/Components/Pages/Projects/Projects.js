@@ -76,7 +76,7 @@ function Project() {
                 <p>
                   This is an in-line command app that uses Sequelize to interface between Node.js and MySQL. jQuery is used to help inrease the readability of the Javascript code.
                 </p>
-                <h3 id="begginer">Begginer</h3>
+                <h3 id="beginner">Beginner</h3>
                 <a className="hvr-grow hvr-icon" id="seedIcon" href="https://drive.google.com/file/d/1ewEkheW4vO0sjkkJ2ax3VeNAKEK5Ng0Y/view">
                   <i class="fas fa-seedling hvr-icon-fade" aria-hidden="true"></i>
                 </a>

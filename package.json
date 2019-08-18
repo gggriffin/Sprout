@@ -6,7 +6,11 @@
   "license": "MIT",
   "main": "server.js",
   "engines": {
+<<<<<<< HEAD
     "node": "11.14.0"
+=======
+    "node": "11.6.0"
+>>>>>>> 62b0080a1b6daadbbe756584fcf8d087a598ca37
   },
   "repository": {
     "type": "git",

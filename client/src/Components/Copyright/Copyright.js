@@ -8,8 +8,8 @@ function Copyright() {
     <div className="cpyRite">
       <Row id="cpyRow">
         <Col md={{ span: 12 }} id="gsRow">
-          <i className="fab fa-github" id="gitLink"></i>
-          <i className="fas fa-seedling" id="devLink"></i>
+          <i className="fab fa-github" id="gitLink" />
+          <i className="fas fa-seedling" id="devLink" />
         </Col>
         <Col>
           <p className="CopyRight">Copyright © 2019</p>
