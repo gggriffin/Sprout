@@ -18,34 +18,17 @@ class UserProfileTable extends React.Component {
       }
     
       loadUsers = () => {
-        API.getUSers()
+        API.getUsers()
         .then(res =>
           this.setState({ userLists: res.data }))
           .catch(err => console.log(err))
       };
 
-      libraryVote = id => {
-        API.voteLibrary(id)
-          .then(res => this.loadLibraries())
-          .catch(err => console.log(err));
-      };
+     
 
 
-    render() {
-        return this.state.libraryLists.map(library =>
-                <tr key={library._id}>
-                    <td>{library.title}</td>
-                    <td>{library.type}</td>
-                    <td>{library.link}</td>
-                    <td>{library.body}</td>
-                    <td>{library.score}</td>
-                    <td>
-                        <button className="fas fa-tint grow-icon" onClick={() => this.libraryVote(library.id)}></button>
-                    </td>
-                </tr>)
-      
+  
     }
-  }
 
   export default UserProfileTable;
 
