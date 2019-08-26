@@ -11,6 +11,9 @@ export default {
   voteApi: function(id) {
     return axios.put('api/v1/apis/score/' + id);
   },
+  searchApis: function(id) {
+    return axios.get('/api/v1/apis/' + id)
+  },
 
 
   getLibraries: function() {
@@ -22,6 +25,7 @@ export default {
   voteLibrary: function(id) {
     return axios.put('/api/v1/libraries/score/' + id);
   },
+  
   
 
   addProject: function(projectData) {

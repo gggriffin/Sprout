@@ -33,6 +33,7 @@ class LibraryTable extends React.Component {
 
     render() {
         return this.state.libraryLists.map(library =>
+                
                 <tr key={library._id}>
                     <td>{library.title}</td>
                     <td>{library.type}</td>
