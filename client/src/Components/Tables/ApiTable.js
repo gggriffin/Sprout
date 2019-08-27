@@ -21,7 +21,7 @@ class ApiTable extends React.Component {
   }
 
   handleInputChange = event => {
-    const { search, value } = event.target;
+    const { value } = event.target;
     this.setState({
       search: value
     })
@@ -57,8 +57,8 @@ class ApiTable extends React.Component {
       <tr key={api._id}>
         <td>{api.title}</td>
         <td>{api.type}</td>
-        <td>{api.link}</td>
-        <td>{api.body}</td>
+        <td className="media-hide">{api.link}</td>
+        <td className="media-hide">{api.body}</td>
         <td>{api.score}</td>
         <td>
           <button className="fas fa-tint grow-icon" onClick={() => this.apiVote(api.id)}></button>
@@ -71,13 +71,13 @@ class ApiTable extends React.Component {
       <Card id="trendApiTableCard">
         <Card.Body>
           <Card.Title id="trendApiTitle">Trending APIs</Card.Title>
-          <Table>
+          <Table sm={{ span: 10}}>
             <thead id="apiTHead">
               <tr>
                 <th>Title</th>
                 <th>Type</th>
-                <th>Source</th>
-                <th>Description</th>
+                <th className="media-hide">Source</th>
+                <th className="media-hide">Description</th>
                 <th>Sprout Score</th>
                 <th>Grow</th>
               </tr>

@@ -23,6 +23,7 @@ const findAll = async (req, res) => {
       order: [
         ['score', 'DESC'],
       ],
+      limit: 10
     });
     res.json(list);
   } catch (error) {

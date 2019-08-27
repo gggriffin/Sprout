@@ -3,3 +3,11 @@
     background-color: #3f3f3f;
     border-color: #3f3f3f;
 }
+
+
+
+@media screen and (max-width: 675px) {
+    .media-hide{
+        display: none;
+    }
+  }

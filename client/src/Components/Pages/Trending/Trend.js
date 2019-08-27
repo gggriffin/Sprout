@@ -2,13 +2,8 @@ import React from 'react';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
-import Table from 'react-bootstrap/Table';
-import InputGroup from 'react-bootstrap/InputGroup';
-import FormControl from 'react-bootstrap/FormControl';
-import Button from 'react-bootstrap/Button';
 import LibraryTable from '../../Tables/LibraryTable';
 import ApiTable from '../../Tables/ApiTable'
-import API from '../../../Components/Utils/API';
 import './Trend.css';
 export default class Trending extends React.Component {
 
@@ -44,7 +39,7 @@ export default class Trending extends React.Component {
           <Row>
             <LibraryTable />
           </Row>
-          
+
         </div>
       </div>
     );

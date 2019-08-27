@@ -57,8 +57,8 @@ class LibraryTable extends React.Component {
       <tr key={library._id}>
         <td>{library.title}</td>
         <td>{library.type}</td>
-        <td>{library.link}</td>
-        <td>{library.body}</td>
+        <td className="media-hide">{library.link}</td>
+        <td className="media-hide">{library.body}</td>
         <td>{library.score}</td>
         <td>
           <button className="fas fa-tint grow-icon" onClick={() => this.libraryVote(library.id)}></button>
@@ -78,8 +78,8 @@ class LibraryTable extends React.Component {
               <tr>
                 <th>Title</th>
                 <th>Type</th>
-                <th>Source</th>
-                <th>Description</th>
+                <th className="media-hide">Source</th>
+                <th className="media-hide">Description</th>
                 <th>Sprout Score</th>
                 <th>Grow</th>
               </tr>
