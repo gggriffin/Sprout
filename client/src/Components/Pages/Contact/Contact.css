@@ -1,28 +1,51 @@
-#cpyRow {
-  background-color: #FFFFFF;
-  text-align: center;
+.tainer {
+  margin-top: 25px;
+  margin-bottom: 15px;
 }
 
-#copCard {
-  display: block;
-  border: none;
+.topRow {
+  padding-bottom: 10px;
 }
 
-#gsRow {
-  padding-top: 20px
+#prsnCrd {
+  border-color: #3f3f3f;
 }
 
-#gitLink, #devLink {
-  font-size: 3em;
+.crdTitle {
+  margin-bottom: 8px;
+  padding-top: 4px;
+  padding-left: 5px;
+  font-size: 30px;
+}
+
+#jasonImg, #garImg, #nickImg {
+  border: 2px solid #3f3f3f;
+}
+
+.cardRow {
+  margin-left: 0;
+  margin-right: 0;
+  padding-bottom: 10px;
+}
+
+.infoCol {
+  padding: 0;
+}
+
+.tactTainer {
+  padding-left: 0;
+}
+
+.iconRow {
+  padding-bottom: 10px;
+}
+
+#gitBlock, #folioBlock, #emailBlock, #liBlock {
+  font-size: 5rem;
+}
+
+#gitLnkBlk, #folioLnkBlk, #emailLnkBlk, #liLnkBlk {
   color: #3f3f3f;
-}
-
-#devCrdLink {
-  margin-left: .5rem;
-}
-
-.CopyRight {
-  font-size: .75em;
 }
 
 /* Icon Fade */
@@ -41,22 +64,8 @@
   -webkit-transition-property: color;
   transition-property: color;
 }
-.hvr-icon-fade:hover .hvr-icon, .hvr-icon-fade:focus .hvr-icon, .hvr-icon-fade:active .hvr-icon {
-  color: #3AFA62;
-}
 
-.hvr-skew-forward {
-  display: inline-block;
-  vertical-align: middle;
-  -webkit-transform: perspective(1px) translateZ(0);
-  transform: perspective(1px) translateZ(0);
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-  -webkit-transition-property: transform;
-  transition-property: transform;
-  -webkit-transform-origin: 0 100%;
-  transform-origin: 0 100%;
+.hvr-icon-fade:hover .hvr-icon, .hvr-icon-fade:focus .hvr-icon, .hvr-icon-fade:active .hvr-icon {
   color: #3AFA62;
 }
 

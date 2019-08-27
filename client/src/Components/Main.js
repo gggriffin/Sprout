@@ -5,6 +5,8 @@ import Trending from './Pages/Trending/Trend';
 import Collaborate from './Pages/Collaborate/Collaborate';
 import Projects from './Pages/Projects/Projects';
 import userProfile from './Pages/userProfile/userProfile';
+import Contact from './Pages/Contact/Contact';
+import pageNotFound from './Pages/404pnf/404pnf';
 function Main() {
   return (
     <Switch>
@@ -14,6 +16,8 @@ function Main() {
       <Route exact path='/collaborate' component={Collaborate}></Route>
       <Route exact path='/projects' component={Projects}></Route>
       <Route exact path='/userProfile' component={userProfile}></Route>
+      <Route exact path='/contact' component={Contact}></Route>
+      <Route exact path='/pageNotFound' component={pageNotFound}></Route>
     </Switch>
   );
 }

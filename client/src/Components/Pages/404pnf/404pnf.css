@@ -1,0 +1,11 @@
+#col1, #col2, #col3 {
+  font-size: 100px;
+  justify-content: center;
+  padding-left: 15px;
+  padding-right: 15px;
+  text-align: center;
+}
+
+#pnfL {
+  color: #3f3f3f;
+}
