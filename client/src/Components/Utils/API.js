@@ -25,6 +25,9 @@ export default {
   voteLibrary: function(id) {
     return axios.put('/api/v1/libraries/score/' + id);
   },
+  searchLibraries: function(id) {
+    return axios.get('/api/v1/libraries/' + id)
+  },
   
   
 

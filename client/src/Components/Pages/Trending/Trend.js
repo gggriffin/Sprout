@@ -12,21 +12,11 @@ import API from '../../../Components/Utils/API';
 import './Trend.css';
 export default class Trending extends React.Component {
 
-  state = {
-    search: ""
-  }
 
-  handleInputChange = event => {
-    const { search, value } = event.target;
-    this.setState({
-      search: value
-    });
-  };
 
-  triggerSearch() {
-    console.log('triggerSearch')
-    this.refs.ApiTable.searchApis(this.state.search)
-  };
+
+
+
 
   render() {
     return (
@@ -48,44 +38,13 @@ export default class Trending extends React.Component {
           </Row>
 
           <Row>
-            <ApiTable search={this.state.search} />
+            <ApiTable />
           </Row>
+
           <Row>
-            <Col md={{ span: 10, offset: 1 }}>
-              <Card id="trendLibTableCard">
-                <Card.Body>
-                  <Card.Title id="trendLibTitle">Trending Libraries</Card.Title>
-                  <Table>
-                    <thead>
-                      <tr>
-                        <th>Title</th>
-                        <th>Type</th>
-                        <th>Source</th>
-                        <th>Description</th>
-                        <th>Sprout Score</th>
-                        <th>Grow</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <LibraryTable />
-                    </tbody>
-                  </Table>
-                  <Col md={{ span: 4, offset: 8 }}>
-                    <InputGroup className="mb-3">
-                      <FormControl
-                        placeholder="Search Libraries"
-                        aria-label="Search Libraries"
-                        aria-describedby="basic-addon2"
-                      />
-                      <InputGroup.Append>
-                        <Button id="librarySearchBtn">Search</Button>
-                      </InputGroup.Append>
-                    </InputGroup>
-                  </Col>
-                </Card.Body>
-              </Card>
-            </Col>
+            <LibraryTable />
           </Row>
+          
         </div>
       </div>
     );
