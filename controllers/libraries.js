@@ -23,6 +23,7 @@ const findAll = async (req, res) => {
       order: [
         ['score', 'DESC'],
       ],
+      limit: 10
     });
     res.json(list);
   } catch (error) {
@@ -31,7 +32,17 @@ const findAll = async (req, res) => {
 };
 
 const findById = async (req, res) => {
-  res.status(501).json({ msg: 'Not Implemented Yet.' });
+  try {
+    const list = await db.libraryLists.findAll({
+      where: {
+        title: req.params.id
+      }
+    });
+    res.json(list);
+
+  } catch (error) {
+    res.status(500).send(error);
+  }
 };
 
 const updateById = async (req, res) => {
