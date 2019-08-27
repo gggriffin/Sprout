@@ -3,16 +3,22 @@
   text-align: center;
 }
 
+#copCard {
+  display: block;
+  border: none;
+}
+
 #gsRow {
   padding-top: 20px
 }
 
-#gitLink {
+#gitLink, #devLink {
   font-size: 3em;
+  color: #3f3f3f;
 }
 
-#devLink {
-  font-size: 3em;
+#devCrdLink {
+  margin-left: .5rem;
 }
 
 .CopyRight {

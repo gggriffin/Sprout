@@ -18,6 +18,10 @@
   font-size: 30px;
 }
 
+#jasonImg, #garImg, #nickImg {
+  border: 2px solid #3f3f3f;
+}
+
 .cardRow {
   margin-left: 0;
   margin-right: 0;
