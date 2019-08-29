@@ -6,14 +6,18 @@
   max-width: 100%;
 }
 
+#col1, #col2 {
+  font-size: inherit;  
+}
+
 #col1, #col3 {
   justify-content: center;
 }
 
 #col1 {
   padding-right: 0;
-
 }
+
 #col3 {
   padding-left: 0;
 }
